@@ -14,7 +14,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
  * @File KotlinAndroid, 26/05/2024 17.11
  */
 internal fun Project.configureKotlinAndroid(
-    commonExtension: CommonExtension<*, *, *, *, *, *>,
+    commonExtension: CommonExtension<*, *, *, *, *>,
 ) {
     commonExtension.apply {
         compileSdk = 34

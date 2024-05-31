@@ -53,6 +53,16 @@ gradlePlugin {
             implementationClass = "AndroidTestConventionPlugin"
         }
 
+        register("androidHilt") {
+            id = "asco.android.hilt"
+            implementationClass = "AndroidHiltConventionPlugin"
+        }
+
+        register("androidRoom") {
+            id = "asco.android.room"
+            implementationClass = "AndroidRoomConventionPlugin"
+        }
+
         register("jvmLibrary") {
             id = "asco.jvm.library"
             implementationClass = "JvmLibraryConventionPlugin"
