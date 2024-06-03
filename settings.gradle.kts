@@ -16,6 +16,8 @@ dependencyResolutionManagement {
 
 rootProject.name = "Asco"
 include(":app")
-include(":core")
+
 include(":core:ui")
 include(":core:designsystem")
+
+include(":feature:login")
