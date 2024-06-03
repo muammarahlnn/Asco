@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="login_title">Sistem\nKelola\nPraktikum &amp;\nAsistensi</string>
+    <string name="asco_description">Membantu pengelolaan data praktikum dan asistensi Laboratorium Sistem Informasi Universitas Hasanuddin.</string>
+    <string name="continue_button_text">Lanjutkan</string>
+    <string name="continue_description">Lanjutkan untuk mulai menggunakan Asco. Aplikasi ini khusus untuk Asisten dan Praktikan.</string>
+    <string name="login">Masuk</string>
+    <string name="login_description">Untuk mendapatkan informasi akun Anda, silahkan hubungi Kordinator Lab.</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+</resources>

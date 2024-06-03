@@ -17,6 +17,7 @@ class AndroidFeatureConventionPlugin : Plugin<Project> {
             pluginManager.apply {
                 apply("asco.android.library")
                 apply("asco.android.hilt")
+                apply("kotlinx-serialization")
             }
 
             extensions.configure<LibraryExtension> {
@@ -40,6 +41,8 @@ class AndroidFeatureConventionPlugin : Plugin<Project> {
                 add("implementation", libs.findLibrary("androidx.lifecycle.viewModelCompose").get())
 
                 add("implementation", libs.findLibrary("kotlinx.coroutines.android").get())
+                add("implementation", libs.findLibrary("kotlinx.serialization.json").get())
+                add("implementation", libs.findLibrary("androidx.navigation.compose").get())
             }
         }
     }

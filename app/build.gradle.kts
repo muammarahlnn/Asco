@@ -34,6 +34,8 @@ dependencies {
     implementation(project(":core:designsystem"))
     implementation(project(":core:ui"))
 
+    implementation(project(":feature:login"))
+
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.core.ktx)

@@ -9,6 +9,7 @@ import androidx.compose.ui.graphics.Color
 
 val Black = Color(0xFF01000D)
 val White = Color(0xFFF2F6FE)
+val PureWhite = Color(0xFFFFFFFF)
 val Gray = Color(0xFF92949F)
 val DarkestPurple = Color(0xFF1E0059)
 val DarkerPurple = Color(0xFF3E2484)
