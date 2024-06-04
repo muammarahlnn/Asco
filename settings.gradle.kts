@@ -21,3 +21,4 @@ include(":core:ui")
 include(":core:designsystem")
 
 include(":feature:login")
+include(":feature:adminhome")

@@ -64,15 +64,18 @@ import com.muammarahlnn.asco.core.ui.R as uiR
  */
 @Composable
 internal fun LoginDestination(
+    onUserLogin: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
     LoginScreen(
+        onUserLogin = onUserLogin,
         modifier = modifier,
     )
 }
 
 @Composable
 private fun LoginScreen(
+    onUserLogin: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
     var showLoginDialog by remember { mutableStateOf(false) }
@@ -80,7 +83,11 @@ private fun LoginScreen(
         LoginDialog(
             onDismissDialog = {
                 showLoginDialog = false
-            }
+            },
+            onUserLogin = {
+                onUserLogin()
+                showLoginDialog = false
+            },
         )
     }
 

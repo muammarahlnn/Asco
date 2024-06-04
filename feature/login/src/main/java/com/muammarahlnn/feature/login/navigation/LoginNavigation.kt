@@ -12,8 +12,12 @@ import kotlinx.serialization.Serializable
 @Serializable
 object LoginScreen
 
-fun NavGraphBuilder.loginScreen() {
+fun NavGraphBuilder.loginScreen(
+    onUserLogin: () -> Unit,
+) {
     composable<LoginScreen> {
-        LoginDestination()
+        LoginDestination(
+            onUserLogin = onUserLogin,
+        )
     }
 }

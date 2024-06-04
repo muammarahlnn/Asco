@@ -5,10 +5,11 @@ import androidx.compose.animation.core.tween
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
+import com.muammarahlnn.asco.feature.adminhome.navigation.adminHomeScreen
+import com.muammarahlnn.asco.feature.adminhome.navigation.navigateToAdminHome
 import com.muammarahlnn.asco.ui.AscoAppState
 import com.muammarahlnn.feature.login.navigation.LoginScreen
 import com.muammarahlnn.feature.login.navigation.loginScreen
-import kotlin.reflect.KClass
 
 /**
  * @Author Muammar Ahlan Abimanyu
@@ -50,6 +51,11 @@ internal fun AscoNavHost(
             )
         },
     ) {
-        loginScreen()
+        loginScreen(
+            onUserLogin = {
+                navController.navigateToAdminHome(popUpToDestination = LoginScreen)
+            }
+        )
+        adminHomeScreen()
     }
 }

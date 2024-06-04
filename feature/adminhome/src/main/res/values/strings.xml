@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="admin">Admin</string>
+    <string name="lab_coordinator">Koordinator Lab</string>
+    <string name="user_data">Data Pengguna</string>
+    <string name="practicum_data">Data Praktikum</string>
+    <string name="class_and_meeting_data">Data Kelas dan Pertemuan</string>
+    <string name="attendance_data">Data Absensi</string>
+    <string name="score_data">Data Nilai</string>
+    <string name="assistance_data">Data Asistensi</string>
+    <string name="control_card">Kartu Kontrol</string>
+    <string name="lab_rules">Tata Tertib Lab</string>
+</resources>
