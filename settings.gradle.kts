@@ -22,3 +22,4 @@ include(":core:designsystem")
 
 include(":feature:login")
 include(":feature:adminhome")
+include(":feature:adminuser")
