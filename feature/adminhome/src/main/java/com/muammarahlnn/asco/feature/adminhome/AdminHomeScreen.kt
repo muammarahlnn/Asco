@@ -3,6 +3,7 @@ package com.muammarahlnn.asco.feature.adminhome
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -52,6 +53,7 @@ import com.muammarahlnn.asco.core.designsystem.theme.DarkestPurple
 import com.muammarahlnn.asco.core.designsystem.theme.PureWhite
 import com.muammarahlnn.asco.core.designsystem.theme.Purple
 import com.muammarahlnn.asco.core.ui.AscoLogoTitle
+import com.muammarahlnn.asco.feature.adminhome.AdminMenu.*
 import com.muammarahlnn.asco.core.ui.R as uiR
 
 /**
@@ -60,9 +62,11 @@ import com.muammarahlnn.asco.core.ui.R as uiR
  */
 @Composable
 internal fun AdminHomeDestination(
+    navigateToAdminUser: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
     AdminHomeScreen(
+        navigateToAdminUser = navigateToAdminUser,
         modifier = modifier,
     )
 }
@@ -70,6 +74,7 @@ internal fun AdminHomeDestination(
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
 private fun AdminHomeScreen(
+    navigateToAdminUser: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
     Scaffold(
@@ -90,27 +95,32 @@ private fun AdminHomeScreen(
                     .fillMaxWidth()
             )
 
-            val menu = listOf(
-                Icons.Rounded.Person to R.string.user_data,
-                Icons.Rounded.DataObject to R.string.practicum_data,
-                Icons.Rounded.MeetingRoom to R.string.class_and_meeting_data,
-                Icons.AutoMirrored.Rounded.MenuBook to R.string.attendance_data,
-                Icons.Rounded.FormatListNumbered to R.string.score_data,
-                Icons.Rounded.BackHand to R.string.assistance_data,
-                Icons.AutoMirrored.Rounded.FeaturedPlayList to R.string.control_card,
-                Icons.Rounded.Info to R.string.lab_rules,
-            )
             FlowRow(
                 verticalArrangement = Arrangement.spacedBy(16.dp),
                 horizontalArrangement = Arrangement.spacedBy(16.dp),
                 maxItemsInEachRow = 2,
                 modifier = Modifier.padding(horizontal = 16.dp),
             ) {
-                menu.forEach { menu ->
+                AdminMenu.entries.forEach { menu ->
+                    val onMenuClick = {
+                        when (menu) {
+                            USER -> navigateToAdminUser()
+                            PRACTICUM -> {}
+                            CLASS_AND_MEETING -> {}
+                            ATTENDANCE -> {}
+                            SCORE -> {}
+                            ASSISTANCE -> {}
+                            CONTROL_CARD -> {}
+                            LAB_RULES -> {}
+                        }
+                    }
+
                     AdminMenuCard(
-                        icon = menu.first,
-                        title = stringResource(id = menu.second),
-                        modifier = Modifier.weight(1f),
+                        icon = menu.icon,
+                        title = stringResource(id = menu.textRes),
+                        modifier = Modifier
+                            .weight(1f)
+                            .clickable { onMenuClick() },
                     )
                 }
             }

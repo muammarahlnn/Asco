@@ -21,8 +21,12 @@ fun NavController.navigateToAdminHome(popUpToDestination: Any) {
     }
 }
 
-fun NavGraphBuilder.adminHomeScreen() {
+fun NavGraphBuilder.adminHomeScreen(
+    navigateToAdminUser: () -> Unit,
+) {
     composable<AdminHomeScreen> {
-        AdminHomeDestination()
+        AdminHomeDestination(
+            navigateToAdminUser = navigateToAdminUser,
+        )
     }
 }

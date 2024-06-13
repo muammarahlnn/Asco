@@ -7,6 +7,8 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import com.muammarahlnn.asco.feature.adminhome.navigation.adminHomeScreen
 import com.muammarahlnn.asco.feature.adminhome.navigation.navigateToAdminHome
+import com.muammarahlnn.asco.feature.adminuser.navigation.adminUserScreen
+import com.muammarahlnn.asco.feature.adminuser.navigation.navigateToAdminUser
 import com.muammarahlnn.asco.ui.AscoAppState
 import com.muammarahlnn.feature.login.navigation.LoginScreen
 import com.muammarahlnn.feature.login.navigation.loginScreen
@@ -56,6 +58,9 @@ internal fun AscoNavHost(
                 navController.navigateToAdminHome(popUpToDestination = LoginScreen)
             }
         )
-        adminHomeScreen()
+        adminHomeScreen(
+            navigateToAdminUser = navController::navigateToAdminUser
+        )
+        adminUserScreen()
     }
 }
