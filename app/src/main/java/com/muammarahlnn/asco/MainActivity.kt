@@ -11,7 +11,7 @@ import com.muammarahlnn.asco.core.designsystem.theme.AscoTheme
 import com.muammarahlnn.asco.ui.AscoApp
 import com.muammarahlnn.asco.ui.rememberAscoAppState
 
- class MainActivity : ComponentActivity() {
+class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         enableEdgeToEdge()
@@ -19,16 +19,16 @@ import com.muammarahlnn.asco.ui.rememberAscoAppState
 
         setContent {
             val appState = rememberAscoAppState()
-            val currentStatusBarColor = appState.currentStatusBarColor
-            DisposableEffect(currentStatusBarColor) {
+            val currentStatusBarStyle = appState.currentStatusBarStyle
+            DisposableEffect(currentStatusBarStyle) {
                 enableEdgeToEdge(
                     statusBarStyle = SystemBarStyle.auto(
-                        currentStatusBarColor.toArgb(),
-                        currentStatusBarColor.toArgb(),
-                    ),
+                        currentStatusBarStyle.color.toArgb(),
+                        currentStatusBarStyle.color.toArgb()
+                    ) { currentStatusBarStyle.isDark },
                     navigationBarStyle = SystemBarStyle.auto(
-                        currentStatusBarColor.toArgb(),
-                        currentStatusBarColor.toArgb(),
+                        lightScrim,
+                        darkScrim,
                     )
                 )
                 onDispose {}
@@ -42,3 +42,7 @@ import com.muammarahlnn.asco.ui.rememberAscoAppState
         }
     }
 }
+
+// default light and dark scrim defined by androidx
+private val lightScrim = android.graphics.Color.argb(0xe6, 0xFF, 0xFF, 0xFF)
+private val darkScrim = android.graphics.Color.argb(0x80, 0x1b, 0x1b, 0x1b)

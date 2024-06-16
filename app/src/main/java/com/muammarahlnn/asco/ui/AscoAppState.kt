@@ -9,8 +9,10 @@ import androidx.navigation.NavDestination
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import com.muammarahlnn.asco.core.designsystem.theme.DarkerPurple
 import com.muammarahlnn.asco.core.designsystem.theme.White
 import com.muammarahlnn.asco.core.designsystem.theme.WhitePurple
+import com.muammarahlnn.asco.feature.adminuser.navigation.AdminUserScreen
 
 /**
  * @Author Muammar Ahlan Abimanyu
@@ -40,8 +42,16 @@ class AscoAppState(
     private val currentRoute: String?
         @Composable get() = currentDestination?.route
 
-    val currentStatusBarColor: Color
+    val currentStatusBarStyle: StatusBarStyle
         @Composable get() = when (currentRoute) {
-            else -> White
+            AdminUserScreen.canonicalName() -> StatusBarStyle(DarkerPurple, true)
+            else -> StatusBarStyle(White)
         }
 }
+
+data class StatusBarStyle(
+    val color: Color,
+    val isDark: Boolean = false,
+)
+
+fun Any.canonicalName(): String? = this::class.java.canonicalName
