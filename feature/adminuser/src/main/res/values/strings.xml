@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="user_data">Data Pengguna</string>
+    <string name="search_placeholder">Cari nama atau username</string>
+    <string name="filter_by_all">Semua</string>
+    <string name="filter_by_assistant">Asisten</string>
+    <string name="filter_by_mentee">Praktikan</string>
+</resources>
