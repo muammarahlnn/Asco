@@ -1,4 +1,4 @@
-package com.muammarahlnn.asco.feature.adminuser.composable
+package com.muammarahlnn.asco.feature.adminuser.component
 
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
@@ -25,11 +25,13 @@ import com.muammarahlnn.asco.feature.adminuser.R
  */
 @Composable
 internal fun SearchBar(
+    query: String,
+    onQueryChange: (String) -> Unit,
     modifier: Modifier = Modifier
 ) {
     OutlinedTextField(
-        value = "",
-        onValueChange = {},
+        value = query,
+        onValueChange = onQueryChange,
         leadingIcon = {
             Icon(
                 imageVector = Icons.Rounded.Search,

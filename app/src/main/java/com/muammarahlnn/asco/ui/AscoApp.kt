@@ -13,16 +13,16 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import com.muammarahlnn.asco.core.designsystem.theme.Black
-import com.muammarahlnn.asco.core.ui.composable.AscoBackground
+import com.muammarahlnn.asco.core.navigation.AscoDestination
+import com.muammarahlnn.asco.core.ui.component.AscoBackground
 import com.muammarahlnn.asco.navigation.AscoNavHost
-import com.muammarahlnn.feature.login.navigation.LoginScreen
 
 /**
  * @Author Muammar Ahlan Abimanyu
  * @File AscoApp, 03/06/2024 17.33
  */
 @Composable
-fun AscoApp(
+internal fun AscoApp(
     appState: AscoAppState,
 ) {
     AscoBackground {
@@ -31,7 +31,7 @@ fun AscoApp(
             contentColor = Black,
             contentWindowInsets = WindowInsets(0, 0, 0, 0)
         ) { paddingValues ->
-            val startDestination = LoginScreen
+            val startDestination = AscoDestination.Login
             AscoNavHost(
                 appState = appState,
                 startDestination = startDestination,

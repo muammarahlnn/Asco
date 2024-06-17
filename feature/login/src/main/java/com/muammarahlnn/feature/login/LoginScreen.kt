@@ -21,10 +21,6 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.AnnotatedString
@@ -35,39 +31,29 @@ import com.muammarahlnn.asco.core.designsystem.theme.Black
 import com.muammarahlnn.asco.core.designsystem.theme.LightestPurple
 import com.muammarahlnn.asco.core.designsystem.theme.PureWhite
 import com.muammarahlnn.asco.core.designsystem.theme.Purple
-import com.muammarahlnn.asco.core.ui.composable.AscoLogoTitle
+import com.muammarahlnn.asco.core.ui.component.AscoLogoTitle
 import com.muammarahlnn.asco.feature.login.R
-import com.muammarahlnn.feature.login.composable.LoginDialog
+import com.muammarahlnn.feature.login.component.LoginDialog
 
 /**
  * @Author Muammar Ahlan Abimanyu
  * @File LoginScreen, 03/06/2024 17.05
  */
 @Composable
-internal fun LoginDestination(
-    onUserLogin: () -> Unit,
-    modifier: Modifier = Modifier,
+internal fun LoginScreen(
+    state: LoginState = LoginState(),
+    actions: LoginActions = LoginActions(),
 ) {
-    LoginScreen(
-        onUserLogin = onUserLogin,
-        modifier = modifier,
-    )
-}
-
-@Composable
-private fun LoginScreen(
-    onUserLogin: () -> Unit,
-    modifier: Modifier = Modifier,
-) {
-    var showLoginDialog by remember { mutableStateOf(false) }
-    if (showLoginDialog) {
+    if (state.showLoginDialog) {
         LoginDialog(
-            onDismissDialog = {
-                showLoginDialog = false
-            },
+            username = state.username,
+            password = state.password,
+            onUsernameChange = actions.onUsernameChange,
+            onPasswordChange = actions.onPasswordChange,
+            onDismissDialog = { actions.onShowLoginDialog(false) },
             onUserLogin = {
-                onUserLogin()
-                showLoginDialog = false
+                actions.onLoginClick()
+                actions.onShowLoginDialog(false)
             },
         )
     }
@@ -78,7 +64,7 @@ private fun LoginScreen(
         },
     ) { paddingValues ->
         Column(
-            modifier = modifier
+            modifier = Modifier
                 .fillMaxSize()
                 .padding(paddingValues)
         ) {
@@ -101,9 +87,7 @@ private fun LoginScreen(
                 modifier = Modifier.padding(horizontal = 16.dp)
             ) {
                 Button(
-                    onClick = {
-                        showLoginDialog = true
-                    },
+                    onClick = { actions.onShowLoginDialog(true) },
                     shape = RoundedCornerShape(10.dp),
                     colors = ButtonDefaults.buttonColors(
                         containerColor = PureWhite,

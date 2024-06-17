@@ -1,4 +1,4 @@
-package com.muammarahlnn.feature.login.composable
+package com.muammarahlnn.feature.login.component
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
@@ -45,6 +45,10 @@ import com.muammarahlnn.asco.feature.login.R
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 internal fun LoginDialog(
+    username: String,
+    password: String,
+    onUsernameChange: (String) -> Unit,
+    onPasswordChange: (String) -> Unit,
     onDismissDialog: () -> Unit,
     onUserLogin: () -> Unit,
     modifier: Modifier = Modifier,
@@ -84,8 +88,8 @@ internal fun LoginDialog(
                     modifier = Modifier.padding(bottom = 8.dp),
                 )
                 LoginTextField(
-                    value = "",
-                    onValueChange = {},
+                    value = username,
+                    onValueChange = onUsernameChange,
                     leadingIcon = {
                         Icon(
                             imageVector = Icons.Rounded.Person,
@@ -105,8 +109,8 @@ internal fun LoginDialog(
                     modifier = Modifier.padding(bottom = 8.dp),
                 )
                 LoginTextField(
-                    value = "",
-                    onValueChange = {},
+                    value = password,
+                    onValueChange = onPasswordChange,
                     leadingIcon = {
                         Icon(
                             imageVector = Icons.Rounded.Lock,

@@ -1,6 +1,7 @@
 plugins {
     id("asco.android.application")
     id("asco.android.application.compose")
+    id("asco.android.hilt")
 }
 
 android {
@@ -33,6 +34,7 @@ android {
 dependencies {
     implementation(project(":core:designsystem"))
     implementation(project(":core:ui"))
+    implementation(project(":core:navigation"))
 
     implementation(project(":feature:login"))
     implementation(project(":feature:adminhome"))

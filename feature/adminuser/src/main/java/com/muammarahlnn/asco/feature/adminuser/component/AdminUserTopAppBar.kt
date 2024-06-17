@@ -1,4 +1,4 @@
-package com.muammarahlnn.asco.feature.adminuser.composable
+package com.muammarahlnn.asco.feature.adminuser.component
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.ArrowBackIosNew

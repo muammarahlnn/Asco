@@ -1,4 +1,4 @@
- package com.muammarahlnn.asco
+package com.muammarahlnn.asco
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -10,7 +10,9 @@ import androidx.compose.ui.graphics.toArgb
 import com.muammarahlnn.asco.core.designsystem.theme.AscoTheme
 import com.muammarahlnn.asco.ui.AscoApp
 import com.muammarahlnn.asco.ui.rememberAscoAppState
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {

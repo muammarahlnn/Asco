@@ -21,10 +21,10 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.unit.dp
 import com.muammarahlnn.asco.core.designsystem.theme.DarkerPurple
 import com.muammarahlnn.asco.core.designsystem.theme.PureWhite
-import com.muammarahlnn.asco.feature.adminuser.composable.AdminUserTopAppBar
-import com.muammarahlnn.asco.feature.adminuser.composable.FilterRow
-import com.muammarahlnn.asco.feature.adminuser.composable.SearchBar
-import com.muammarahlnn.asco.feature.adminuser.composable.UserItem
+import com.muammarahlnn.asco.feature.adminuser.component.AdminUserTopAppBar
+import com.muammarahlnn.asco.feature.adminuser.component.FilterRow
+import com.muammarahlnn.asco.feature.adminuser.component.SearchBar
+import com.muammarahlnn.asco.feature.adminuser.component.UserItem
 
 /**
  * @Author Muammar Ahlan Abimanyu
@@ -32,7 +32,8 @@ import com.muammarahlnn.asco.feature.adminuser.composable.UserItem
  */
 @Composable
 internal fun AdminUserScreen(
-    modifier: Modifier = Modifier,
+    state: AdminUserState = AdminUserState(),
+    actions: AdminUserActions = AdminUserActions(),
 ) {
     Scaffold(
         topBar = {
@@ -55,7 +56,7 @@ internal fun AdminUserScreen(
             }
         },
         floatingActionButtonPosition = FabPosition.End,
-        modifier = modifier.fillMaxSize()
+        modifier = Modifier.fillMaxSize()
     ) { paddingValues ->
         LazyColumn(
             contentPadding = PaddingValues(16.dp),
@@ -63,6 +64,8 @@ internal fun AdminUserScreen(
         ) {
             item {
                 SearchBar(
+                    query = state.searchQuery,
+                    onQueryChange = actions.onSearchQueryChange,
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(bottom = 8.dp),
@@ -71,6 +74,8 @@ internal fun AdminUserScreen(
 
             item {
                 FilterRow(
+                    selectedFilter = state.filter,
+                    onFilterChange = actions.onFilterChange,
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(bottom = 16.dp)

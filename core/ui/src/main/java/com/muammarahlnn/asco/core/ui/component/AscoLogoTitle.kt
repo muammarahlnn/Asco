@@ -1,4 +1,4 @@
-package com.muammarahlnn.asco.core.ui.composable
+package com.muammarahlnn.asco.core.ui.component
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Row

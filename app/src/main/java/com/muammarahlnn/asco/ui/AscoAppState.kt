@@ -1,6 +1,5 @@
 package com.muammarahlnn.asco.ui
 
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.Stable
 import androidx.compose.runtime.remember
@@ -11,8 +10,7 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.muammarahlnn.asco.core.designsystem.theme.DarkerPurple
 import com.muammarahlnn.asco.core.designsystem.theme.White
-import com.muammarahlnn.asco.core.designsystem.theme.WhitePurple
-import com.muammarahlnn.asco.feature.adminuser.navigation.AdminUserScreen
+import com.muammarahlnn.asco.core.navigation.AscoDestination
 
 /**
  * @Author Muammar Ahlan Abimanyu
@@ -44,7 +42,7 @@ class AscoAppState(
 
     val currentStatusBarStyle: StatusBarStyle
         @Composable get() = when (currentRoute) {
-            AdminUserScreen.canonicalName() -> StatusBarStyle(DarkerPurple, true)
+            AscoDestination.AdminUser.canonicalName() -> StatusBarStyle(DarkerPurple, true)
             else -> StatusBarStyle(White)
         }
 }

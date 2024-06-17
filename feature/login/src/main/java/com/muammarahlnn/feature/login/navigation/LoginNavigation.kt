@@ -1,23 +1,21 @@
 package com.muammarahlnn.feature.login.navigation
 
+import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
-import com.muammarahlnn.feature.login.LoginDestination
-import kotlinx.serialization.Serializable
+import com.muammarahlnn.asco.core.navigation.AscoDestination
+import com.muammarahlnn.feature.login.LoginRoute
 
 /**
  * @Author Muammar Ahlan Abimanyu
  * @File LoginNavigation, 03/06/2024 17.21
  */
-@Serializable
-object LoginScreen
-
 fun NavGraphBuilder.loginScreen(
-    onUserLogin: () -> Unit,
+    navController: NavController,
 ) {
-    composable<LoginScreen> {
-        LoginDestination(
-            onUserLogin = onUserLogin,
+    composable<AscoDestination.Login> {
+        LoginRoute(
+            navController = navController,
         )
     }
 }
