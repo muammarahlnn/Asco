@@ -19,8 +19,9 @@ include(":app")
 
 include(":core:ui")
 include(":core:designsystem")
+include(":core:common")
+include(":core:navigation")
 
 include(":feature:login")
 include(":feature:adminhome")
 include(":feature:adminuser")
-include(":core:common")
