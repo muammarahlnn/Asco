@@ -1,4 +1,4 @@
-package com.muammarahlnn.asco.core.ui
+package com.muammarahlnn.asco.core.ui.composable
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Row
@@ -16,6 +16,7 @@ import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.unit.dp
 import com.muammarahlnn.asco.core.designsystem.theme.DarkestPurple
 import com.muammarahlnn.asco.core.designsystem.theme.Purple
+import com.muammarahlnn.asco.core.ui.R
 
 /**
  * @Author Muammar Ahlan Abimanyu

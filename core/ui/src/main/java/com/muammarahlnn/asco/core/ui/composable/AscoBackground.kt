@@ -1,4 +1,4 @@
-package com.muammarahlnn.asco.core.ui
+package com.muammarahlnn.asco.core.ui.composable
 
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.LocalAbsoluteTonalElevation

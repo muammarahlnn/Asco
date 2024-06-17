@@ -13,7 +13,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import com.muammarahlnn.asco.core.designsystem.theme.Black
-import com.muammarahlnn.asco.core.ui.AscoBackground
+import com.muammarahlnn.asco.core.ui.composable.AscoBackground
 import com.muammarahlnn.asco.navigation.AscoNavHost
 import com.muammarahlnn.feature.login.navigation.LoginScreen
 
