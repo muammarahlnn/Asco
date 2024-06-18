@@ -1,6 +1,5 @@
 package com.muammarahlnn.asco.core.navigation
 
-import androidx.navigation.NavController
 import kotlinx.serialization.Serializable
 
 /**

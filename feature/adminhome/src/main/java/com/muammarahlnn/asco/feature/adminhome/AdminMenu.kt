@@ -6,7 +6,6 @@ import androidx.compose.material.icons.automirrored.rounded.FeaturedPlayList
 import androidx.compose.material.icons.automirrored.rounded.MenuBook
 import androidx.compose.material.icons.rounded.BackHand
 import androidx.compose.material.icons.rounded.DataObject
-import androidx.compose.material.icons.rounded.FormatLineSpacing
 import androidx.compose.material.icons.rounded.FormatListNumbered
 import androidx.compose.material.icons.rounded.Info
 import androidx.compose.material.icons.rounded.MeetingRoom
