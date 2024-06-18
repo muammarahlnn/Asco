@@ -5,6 +5,8 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.navigation.NavController
 import com.muammarahlnn.asco.core.navigation.AscoDestination
+import com.muammarahlnn.asco.feature.adminhome.AdminMenu.PRACTICUM
+import com.muammarahlnn.asco.feature.adminhome.AdminMenu.USER
 import kotlinx.coroutines.CoroutineScope
 
 /**
@@ -33,7 +35,13 @@ internal class AdminHomeCoordinator(
 ) {
     val state = viewModel.state
 
-    fun navigateToAdminUser() {
-        navController.navigate(AscoDestination.AdminUser)
+    fun navigateToMenu(adminMenu: AdminMenu) {
+        navController.navigate(
+            when (adminMenu) {
+                USER -> AscoDestination.AdminUser
+                PRACTICUM -> AscoDestination.AdminPracticum
+                else -> throw Throwable()
+            }
+        )
     }
 }

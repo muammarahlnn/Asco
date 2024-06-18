@@ -16,7 +16,7 @@ import androidx.compose.ui.graphics.vector.ImageVector
  * @Author Muammar Ahlan Abimanyu
  * @File AdminMenu, 13/06/2024 23.37
  */
-enum class AdminMenu(
+internal enum class AdminMenu(
     val icon: ImageVector,
     @StringRes val textRes: Int,
 ) {

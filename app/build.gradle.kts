@@ -41,6 +41,7 @@ dependencies {
     implementation(project(":feature:adminuser"))
     implementation(project(":feature:adminuserdetails"))
     implementation(project(":feature:adminusercreate"))
+    implementation(project(":feature:adminpracticum"))
 
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.appcompat)

@@ -16,14 +16,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.muammarahlnn.asco.feature.adminhome.AdminMenu.ASSISTANCE
-import com.muammarahlnn.asco.feature.adminhome.AdminMenu.ATTENDANCE
-import com.muammarahlnn.asco.feature.adminhome.AdminMenu.CLASS_AND_MEETING
-import com.muammarahlnn.asco.feature.adminhome.AdminMenu.CONTROL_CARD
-import com.muammarahlnn.asco.feature.adminhome.AdminMenu.LAB_RULES
-import com.muammarahlnn.asco.feature.adminhome.AdminMenu.PRACTICUM
-import com.muammarahlnn.asco.feature.adminhome.AdminMenu.SCORE
-import com.muammarahlnn.asco.feature.adminhome.AdminMenu.USER
 import com.muammarahlnn.asco.feature.adminhome.component.AdminHeaderCard
 import com.muammarahlnn.asco.feature.adminhome.component.AdminHomeTopAppBar
 import com.muammarahlnn.asco.feature.adminhome.component.AdminMenuCard
@@ -63,25 +55,12 @@ internal fun AdminHomeScreen(
                 modifier = Modifier.padding(horizontal = 16.dp),
             ) {
                 AdminMenu.entries.forEach { menu ->
-                    val onMenuClick = {
-                        when (menu) {
-                            USER -> actions.onUserDataMenuClick()
-                            PRACTICUM -> {}
-                            CLASS_AND_MEETING -> {}
-                            ATTENDANCE -> {}
-                            SCORE -> {}
-                            ASSISTANCE -> {}
-                            CONTROL_CARD -> {}
-                            LAB_RULES -> {}
-                        }
-                    }
-
                     AdminMenuCard(
                         icon = menu.icon,
                         title = stringResource(id = menu.textRes),
                         modifier = Modifier
                             .weight(1f)
-                            .clickable { onMenuClick() },
+                            .clickable { actions.onMenuClick(menu) },
                     )
                 }
             }

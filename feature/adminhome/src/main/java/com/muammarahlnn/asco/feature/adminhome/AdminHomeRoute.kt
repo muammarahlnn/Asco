@@ -32,7 +32,7 @@ internal fun AdminHomeRoute(
 private fun rememberAdminHomeActions(coordinator: AdminHomeCoordinator): AdminHomeActions {
     return remember(coordinator) {
         AdminHomeActions(
-            onUserDataMenuClick = coordinator::navigateToAdminUser,
+            onMenuClick = coordinator::navigateToMenu,
         )
     }
 }

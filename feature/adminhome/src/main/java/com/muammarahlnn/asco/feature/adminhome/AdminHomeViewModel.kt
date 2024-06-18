@@ -9,4 +9,4 @@ import javax.inject.Inject
  * @File AdminHomeViewModel, 17/06/2024 23.49
  */
 @HiltViewModel
-class AdminHomeViewModel @Inject constructor() : BaseViewModel<AdminHomeState>(AdminHomeState())
+internal class AdminHomeViewModel @Inject constructor() : BaseViewModel<AdminHomeState>(AdminHomeState())
