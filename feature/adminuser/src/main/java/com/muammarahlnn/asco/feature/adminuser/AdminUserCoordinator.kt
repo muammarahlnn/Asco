@@ -31,4 +31,8 @@ internal class AdminUserCoordinator(
     private val scope: CoroutineScope,
 ) {
     val state = viewModel.state
+
+    fun navigateBack() {
+        navController.navigateUp()
+    }
 }

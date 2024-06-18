@@ -32,8 +32,11 @@ internal fun AdminUserRoute(
 private fun rememberAdminUserActions(coordinator: AdminUserCoordinator): AdminUserActions {
     return remember(coordinator) {
         AdminUserActions(
+            onBackClick = coordinator::navigateBack,
             onSearchQueryChange = coordinator.viewModel::onSearchQueryChange,
             onFilterChange = coordinator.viewModel::onFilterChange,
+            onShowFilterDialog = coordinator.viewModel::onShowFilterDialog,
+            onApplyFilterDialog = coordinator.viewModel::onApplyFilterDialog,
         )
     }
 }

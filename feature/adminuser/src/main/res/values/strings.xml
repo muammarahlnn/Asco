@@ -5,4 +5,15 @@
     <string name="filter_by_all">Semua</string>
     <string name="filter_by_assistant">Asisten</string>
     <string name="filter_by_mentee">Praktikan</string>
+    <string name="filter_title">Filter</string>
+    <string name="filter_dialog_confirm">Terapkan</string>
+    <string name="filter_dialog_cancel">Batal</string>
+    <string name="filter_sort_by_text">Urutkan berdasarkan</string>
+    <string name="sort_by_created_at">Waktu dibuat</string>
+    <string name="sort_by_name">Nama</string>
+    <string name="sort_by_username">Username</string>
+    <string name="sort_by_role">Role</string>
+    <string name="filter_order_by_text">Urutkan secara</string>
+    <string name="order_by_ascending">Menaik</string>
+    <string name="order_by_descending">Menurun</string>
 </resources>

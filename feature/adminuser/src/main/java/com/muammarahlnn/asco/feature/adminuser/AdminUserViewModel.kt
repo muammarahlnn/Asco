@@ -2,6 +2,8 @@ package com.muammarahlnn.asco.feature.adminuser
 
 import com.muammarahlnn.asco.core.ui.viewmodel.BaseViewModel
 import com.muammarahlnn.asco.feature.adminuser.component.FilterBy
+import com.muammarahlnn.asco.feature.adminuser.component.FilterOrderBy
+import com.muammarahlnn.asco.feature.adminuser.component.FilterSortBy
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
@@ -21,6 +23,24 @@ internal class AdminUserViewModel @Inject constructor() : BaseViewModel<AdminUse
     fun onFilterChange(filter: FilterBy) {
         updateState {
             copy(filter = filter)
+        }
+    }
+
+    fun onShowFilterDialog(show: Boolean) {
+        updateState {
+            copy(showFilterDialog = show)
+        }
+    }
+
+    fun onApplyFilterDialog(
+        sortBy: FilterSortBy,
+        orderBy: FilterOrderBy,
+    ) {
+        updateState {
+            copy(
+                filterSortBy = sortBy,
+                filterOrderBy = orderBy,
+            )
         }
     }
 }

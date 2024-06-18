@@ -22,6 +22,7 @@ import androidx.compose.ui.unit.dp
 import com.muammarahlnn.asco.core.designsystem.theme.DarkerPurple
 import com.muammarahlnn.asco.core.designsystem.theme.PureWhite
 import com.muammarahlnn.asco.feature.adminuser.component.AdminUserTopAppBar
+import com.muammarahlnn.asco.feature.adminuser.component.FilterDialog
 import com.muammarahlnn.asco.feature.adminuser.component.FilterRow
 import com.muammarahlnn.asco.feature.adminuser.component.SearchBar
 import com.muammarahlnn.asco.feature.adminuser.component.UserItem
@@ -35,9 +36,21 @@ internal fun AdminUserScreen(
     state: AdminUserState = AdminUserState(),
     actions: AdminUserActions = AdminUserActions(),
 ) {
+    if (state.showFilterDialog) {
+        FilterDialog(
+            sortBy = state.filterSortBy,
+            orderBy = state.filterOrderBy,
+            onDismiss = { actions.onShowFilterDialog(false) },
+            onApply = actions.onApplyFilterDialog,
+        )
+    }
+
     Scaffold(
         topBar = {
-            AdminUserTopAppBar()
+            AdminUserTopAppBar(
+                onBackClick = actions.onBackClick,
+                onFilterClick = { actions.onShowFilterDialog(true) },
+            )
         },
         floatingActionButton = {
             Box(

@@ -23,7 +23,11 @@ import com.muammarahlnn.asco.feature.adminuser.R
  */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-internal fun AdminUserTopAppBar(modifier: Modifier = Modifier) {
+internal fun AdminUserTopAppBar(
+    onBackClick: () -> Unit,
+    onFilterClick: () -> Unit,
+    modifier: Modifier = Modifier,
+) {
     CenterAlignedTopAppBar(
         title = {
             Text(
@@ -34,7 +38,7 @@ internal fun AdminUserTopAppBar(modifier: Modifier = Modifier) {
         },
         navigationIcon = {
             IconButton(
-                onClick = {},
+                onClick = onBackClick,
             ) {
                 Icon(
                     imageVector = Icons.Rounded.ArrowBackIosNew,
@@ -45,7 +49,7 @@ internal fun AdminUserTopAppBar(modifier: Modifier = Modifier) {
         },
         actions = {
             IconButton(
-                onClick = {},
+                onClick = onFilterClick,
             ) {
                 Icon(
                     imageVector = Icons.Rounded.FilterList,
