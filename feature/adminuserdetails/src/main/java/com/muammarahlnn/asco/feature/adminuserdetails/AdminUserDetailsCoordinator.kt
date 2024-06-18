@@ -1,24 +1,24 @@
-package com.muammarahlnn.asco.feature.adminuser
+package com.muammarahlnn.asco.feature.adminuserdetails
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.ui.Modifier
 import androidx.navigation.NavController
-import com.muammarahlnn.asco.core.navigation.AscoDestination
 import kotlinx.coroutines.CoroutineScope
 
 /**
  * @Author Muammar Ahlan Abimanyu
- * @File AdminUserCoordinator, 18/06/2024 00.08
+ * @File AdminUserDetailsCoordinator, 18/06/2024 17.05
  */
 @Composable
-internal fun rememberAdminUserCoordinator(
+internal fun rememberAdminUserDetailsCoordinator(
     navController: NavController,
-    viewModel: AdminUserViewModel,
+    viewModel: AdminUserDetailViewModel,
     scope: CoroutineScope = rememberCoroutineScope(),
-): AdminUserCoordinator {
+): AdminUserDetailsCoordinator {
     return remember(navController, viewModel, scope) {
-        AdminUserCoordinator(
+        AdminUserDetailsCoordinator(
             navController = navController,
             viewModel = viewModel,
             scope = scope,
@@ -26,18 +26,14 @@ internal fun rememberAdminUserCoordinator(
     }
 }
 
-internal class AdminUserCoordinator(
+internal class AdminUserDetailsCoordinator(
     val navController: NavController,
-    val viewModel: AdminUserViewModel,
+    val viewModel: AdminUserDetailViewModel,
     private val scope: CoroutineScope,
 ) {
     val state = viewModel.state
 
     fun navigateBack() {
         navController.navigateUp()
-    }
-
-    fun navigateToAdminUserDetails() {
-        navController.navigate(AscoDestination.AdminUserDetails)
     }
 }

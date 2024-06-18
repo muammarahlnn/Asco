@@ -97,6 +97,7 @@ internal fun AdminUserScreen(
 
             items(5) {
                 UserItem(
+                    onUserClick = actions.onUserClick,
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(bottom = 8.dp)

@@ -3,6 +3,7 @@ package com.muammarahlnn.asco.feature.adminuser.component
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -40,6 +41,7 @@ import com.muammarahlnn.asco.core.designsystem.theme.Purple
  */
 @Composable
 internal fun UserItem(
+    onUserClick: () -> Unit,
     modifier: Modifier = Modifier
 ) {
     Card(
@@ -49,7 +51,7 @@ internal fun UserItem(
         colors = CardDefaults.cardColors(
             containerColor = PureWhite,
         ),
-        modifier = modifier,
+        modifier = modifier.clickable { onUserClick() },
     ) {
         Row(
             verticalAlignment = Alignment.CenterVertically,

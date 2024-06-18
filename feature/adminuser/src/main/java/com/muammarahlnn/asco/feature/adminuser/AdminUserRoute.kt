@@ -37,6 +37,7 @@ private fun rememberAdminUserActions(coordinator: AdminUserCoordinator): AdminUs
             onFilterChange = coordinator.viewModel::onFilterChange,
             onShowFilterDialog = coordinator.viewModel::onShowFilterDialog,
             onApplyFilterDialog = coordinator.viewModel::onApplyFilterDialog,
+            onUserClick = coordinator::navigateToAdminUserDetails
         )
     }
 }

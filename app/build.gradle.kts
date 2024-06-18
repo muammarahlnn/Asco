@@ -39,6 +39,7 @@ dependencies {
     implementation(project(":feature:login"))
     implementation(project(":feature:adminhome"))
     implementation(project(":feature:adminuser"))
+    implementation(project(":feature:adminuserdetails"))
 
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.appcompat)

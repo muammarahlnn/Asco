@@ -29,38 +29,38 @@ internal fun AdminUserTopAppBar(
     modifier: Modifier = Modifier,
 ) {
     CenterAlignedTopAppBar(
-        title = {
-            Text(
-                text = stringResource(id = R.string.user_data),
-                style = MaterialTheme.typography.titleMedium,
-                color = PureWhite,
+            title = {
+                Text(
+                    text = stringResource(id = R.string.user_data),
+                    style = MaterialTheme.typography.titleMedium,
+                    color = PureWhite,
+                )
+            },
+    navigationIcon = {
+        IconButton(
+            onClick = onBackClick,
+        ) {
+            Icon(
+                imageVector = Icons.Rounded.ArrowBackIosNew,
+                contentDescription = null,
+                tint = PureWhite,
             )
-        },
-        navigationIcon = {
-            IconButton(
-                onClick = onBackClick,
-            ) {
-                Icon(
-                    imageVector = Icons.Rounded.ArrowBackIosNew,
-                    contentDescription = null,
-                    tint = PureWhite,
-                )
-            }
-        },
-        actions = {
-            IconButton(
-                onClick = onFilterClick,
-            ) {
-                Icon(
-                    imageVector = Icons.Rounded.FilterList,
-                    contentDescription = null,
-                    tint = PureWhite,
-                )
-            }
-        },
-        colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
-            containerColor = DarkerPurple,
-        ),
-        modifier = modifier,
+        }
+    },
+    actions = {
+        IconButton(
+            onClick = onFilterClick,
+        ) {
+            Icon(
+                imageVector = Icons.Rounded.FilterList,
+                contentDescription = null,
+                tint = PureWhite,
+            )
+        }
+    },
+    colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
+        containerColor = DarkerPurple,
+    ),
+    modifier = modifier,
     )
 }

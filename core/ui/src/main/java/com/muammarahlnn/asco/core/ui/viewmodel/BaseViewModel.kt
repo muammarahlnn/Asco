@@ -16,11 +16,11 @@ abstract class BaseViewModel<State>(initialState: State) : ViewModel() {
     private val _state = MutableStateFlow(initialState)
     val state: StateFlow<State> = _state.asStateFlow()
 
-    fun updateState(state: State) {
+    protected fun updateState(state: State) {
         _state.update { state }
     }
 
-    fun updateState(block: State.() -> State) {
+    protected fun updateState(block: State.() -> State) {
         _state.update(block)
     }
 }
