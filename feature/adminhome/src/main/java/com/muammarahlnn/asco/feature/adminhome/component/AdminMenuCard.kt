@@ -100,7 +100,7 @@ internal fun AdminMenuCard(
                         fontSize = 16.sp,
                         fontWeight = FontWeight.SemiBold,
                     ),
-                    color = DarkestPurple,
+                    color = DarkerPurple,
                 )
             }
         }

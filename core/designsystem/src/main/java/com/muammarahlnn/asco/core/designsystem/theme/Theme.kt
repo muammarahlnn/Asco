@@ -11,10 +11,10 @@ import androidx.compose.ui.unit.dp
  * @File Theme, 03/06/2024 01.03
  */
 private val LightColorScheme = lightColorScheme(
-    primary = Purple,
-    onPrimary = White,
-    secondary = Pink,
-    onSecondary = White,
+    primary = DarkerPurple,
+    onPrimary = PureWhite,
+    secondary = Purple,
+    onSecondary = PureWhite,
     tertiary = Blue,
     background = White,
     onBackground = Black,
@@ -22,6 +22,7 @@ private val LightColorScheme = lightColorScheme(
     onSurface = Gray,
     surfaceVariant = WhitePurple,
     surfaceTint = White,
+    error = Red,
 )
 
 @Composable
