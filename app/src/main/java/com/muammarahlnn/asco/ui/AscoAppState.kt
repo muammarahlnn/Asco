@@ -8,7 +8,6 @@ import androidx.navigation.NavDestination
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import com.muammarahlnn.asco.core.designsystem.theme.DarkerPurple
 import com.muammarahlnn.asco.core.designsystem.theme.White
 import com.muammarahlnn.asco.core.navigation.AscoDestination
 
@@ -42,7 +41,9 @@ class AscoAppState(
 
     val currentStatusBarStyle: StatusBarStyle
         @Composable get() = when (currentRoute) {
-            AscoDestination.AdminUser.canonicalName() -> StatusBarStyle(DarkerPurple, true)
+            AscoDestination.AdminUser.canonicalName() -> StatusBarStyle(Color.Transparent, true)
+            AscoDestination.AdminUserDetails.canonicalName() -> StatusBarStyle(Color.Transparent, true)
+            AscoDestination.AdminUserCreate.canonicalName() -> StatusBarStyle(Color.Transparent, true)
             else -> StatusBarStyle(White)
         }
 }
