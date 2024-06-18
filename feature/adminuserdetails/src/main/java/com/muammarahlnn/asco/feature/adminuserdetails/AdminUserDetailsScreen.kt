@@ -19,12 +19,12 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.Scaffold
-import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.Person
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
+import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -37,7 +37,6 @@ import androidx.compose.ui.unit.sp
 import com.muammarahlnn.asco.core.designsystem.theme.DarkerPurple
 import com.muammarahlnn.asco.core.designsystem.theme.PureWhite
 import com.muammarahlnn.asco.core.designsystem.theme.Red
-import com.muammarahlnn.asco.core.designsystem.theme.White
 import com.muammarahlnn.asco.feature.adminuserdetails.component.AdminUserDetailsTopAppBar
 
 /**
@@ -53,7 +52,7 @@ internal fun AdminUserDetailsScreen(
         topBar = {
             AdminUserDetailsTopAppBar(
                 onBackClick = actions.onBackClick,
-                onEditClick = {}
+                onEditClick = actions.onEditClick,
             )
         },
         modifier = Modifier
@@ -67,8 +66,6 @@ internal fun AdminUserDetailsScreen(
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
             modifier = Modifier
-                .fillMaxSize()
-                .background(White)
                 .padding(paddingValues)
         ) {
             Spacer(modifier = Modifier.height(48.dp))

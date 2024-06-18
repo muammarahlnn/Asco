@@ -1,8 +1,9 @@
-package com.muammarahlnn.asco.feature.adminuser.component
+package com.muammarahlnn.asco.feature.adminusercreate.component
 
+import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.ArrowBackIosNew
-import androidx.compose.material.icons.rounded.FilterList
+import androidx.compose.material.icons.rounded.Check
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
@@ -13,25 +14,25 @@ import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.unit.dp
 import com.muammarahlnn.asco.core.designsystem.theme.DarkerPurple
 import com.muammarahlnn.asco.core.designsystem.theme.PureWhite
-import com.muammarahlnn.asco.feature.adminuser.R
+import com.muammarahlnn.asco.feature.adminusercreate.R
 
 /**
  * @Author Muammar Ahlan Abimanyu
- * @File AdminUserTopAppBar, 16/06/2024 01.39
+ * @File AdminUserCreateTopAppBar, 18/06/2024 19.12
  */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-internal fun AdminUserTopAppBar(
+internal fun AdminUserCreateTopAppBar(
     onBackClick: () -> Unit,
-    onFilterClick: () -> Unit,
-    modifier: Modifier = Modifier,
+    onCreateUserClick: () -> Unit,
 ) {
     CenterAlignedTopAppBar(
         title = {
             Text(
-                text = stringResource(id = R.string.user_data),
+                text = stringResource(id = R.string.create_user),
                 style = MaterialTheme.typography.titleMedium,
                 color = PureWhite,
             )
@@ -49,18 +50,18 @@ internal fun AdminUserTopAppBar(
         },
         actions = {
             IconButton(
-                onClick = onFilterClick,
+                onClick = onCreateUserClick,
             ) {
                 Icon(
-                    imageVector = Icons.Rounded.FilterList,
+                    imageVector = Icons.Rounded.Check,
                     contentDescription = null,
                     tint = PureWhite,
+                    modifier = Modifier.size(32.dp),
                 )
             }
         },
         colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
             containerColor = DarkerPurple,
         ),
-        modifier = modifier,
     )
 }

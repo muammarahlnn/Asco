@@ -23,4 +23,5 @@ data class AdminUserActions(
     val onShowFilterDialog: (Boolean) -> Unit = {},
     val onApplyFilterDialog: (FilterSortBy, FilterOrderBy) -> Unit = { _, _ -> },
     val onUserClick: () -> Unit = {},
+    val onFabAddClick: () -> Unit = {},
 )

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="create_user">Tambah Pengguna</string>
+    <string name="username">Username</string>
+    <string name="full_name">Nama Lengkap</string>
+    <string name="batch">Angkatan</string>
+    <string name="role">Role</string>
+    <string name="assistant">Asisten</string>
+    <string name="mentee">Praktikan</string>
+    <string name="import_from_excel">Import dari Excel</string>
+    <string name="download_excel_template">Download Template Excel</string>
+</resources>

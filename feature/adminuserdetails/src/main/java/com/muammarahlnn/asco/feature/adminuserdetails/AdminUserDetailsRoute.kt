@@ -32,7 +32,8 @@ internal fun AdminUserDetailsRoute(
 private fun rememberAdminUserDetailsActions(coordinator: AdminUserDetailsCoordinator): AdminUserActions {
     return remember(coordinator) {
         AdminUserActions(
-            onBackClick = coordinator::navigateBack
+            onBackClick = coordinator::navigateBack,
+            onEditClick = coordinator::navigateToAdminUserCreate,
         )
     }
 }

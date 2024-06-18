@@ -1,6 +1,7 @@
 package com.muammarahlnn.asco.feature.adminuser
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
@@ -58,6 +59,7 @@ internal fun AdminUserScreen(
                 modifier = Modifier
                     .clip(CircleShape)
                     .background(DarkerPurple)
+                    .clickable { actions.onFabAddClick() }
                     .padding(12.dp)
             ) {
                 Icon(

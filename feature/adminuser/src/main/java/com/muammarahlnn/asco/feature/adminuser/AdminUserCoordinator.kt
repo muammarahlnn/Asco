@@ -40,4 +40,8 @@ internal class AdminUserCoordinator(
     fun navigateToAdminUserDetails() {
         navController.navigate(AscoDestination.AdminUserDetails)
     }
+
+    fun navigateToAdminUserCreate() {
+        navController.navigate(AscoDestination.AdminUserCreate)
+    }
 }
