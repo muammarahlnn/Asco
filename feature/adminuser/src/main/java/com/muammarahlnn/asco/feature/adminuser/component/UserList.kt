@@ -34,6 +34,7 @@ import com.muammarahlnn.asco.core.designsystem.theme.DarkerPurple
 import com.muammarahlnn.asco.core.designsystem.theme.Pink
 import com.muammarahlnn.asco.core.designsystem.theme.PureWhite
 import com.muammarahlnn.asco.core.designsystem.theme.Purple
+import com.muammarahlnn.asco.core.ui.component.CircleDeleteButton
 
 /**
  * @Author Muammar Ahlan Abimanyu
@@ -100,24 +101,9 @@ internal fun UserItem(
                 }
             }
             Spacer(modifier = Modifier.weight(1f))
-            Box(
-                contentAlignment = Alignment.Center,
-                modifier = Modifier
-                    .border(
-                        width = 1.dp,
-                        color = DarkPink,
-                        shape = CircleShape,
-                    )
-                    .clip(CircleShape)
-                    .background(Pink)
-            ) {
-                Icon(
-                    imageVector = Icons.Rounded.HorizontalRule,
-                    contentDescription = null,
-                    tint = PureWhite,
-                    modifier = Modifier.padding(2.dp)
-                )
-            }
+            CircleDeleteButton(
+                onClick = {}
+            )
         }
     }
 }

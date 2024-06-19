@@ -13,7 +13,9 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.SpanStyle
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.muammarahlnn.asco.core.designsystem.theme.AscoTheme
 import com.muammarahlnn.asco.core.designsystem.theme.DarkestPurple
 import com.muammarahlnn.asco.core.designsystem.theme.Purple
 import com.muammarahlnn.asco.core.ui.R
@@ -57,4 +59,12 @@ private fun AscoTitle() {
         style = MaterialTheme.typography.titleLarge,
         color = DarkestPurple,
     )
+}
+
+@Preview
+@Composable
+private fun AscoLogoTitlePreview() {
+    AscoTheme {
+        AscoLogoTitle()
+    }
 }
