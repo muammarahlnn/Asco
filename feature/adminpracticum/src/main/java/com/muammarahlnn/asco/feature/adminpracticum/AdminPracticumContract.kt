@@ -8,4 +8,5 @@ internal class AdminPracticumState
 
 internal data class AdminPracticumActions(
     val onBackClick: () -> Unit = {},
+    val onPracticumClick: () -> Unit = {},
 )

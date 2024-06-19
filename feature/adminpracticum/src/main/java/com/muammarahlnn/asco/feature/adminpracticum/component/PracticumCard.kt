@@ -36,6 +36,7 @@ import com.muammarahlnn.asco.core.ui.component.CircleDeleteButton
 internal fun PracticumCard(
     practicumName: String,
     numberOfClasses: Int,
+    onClick: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
     Card(
@@ -43,7 +44,7 @@ internal fun PracticumCard(
         colors = CardDefaults.cardColors(
             containerColor = PureWhite,
         ),
-        onClick = {},
+        onClick = onClick,
         modifier = modifier,
     ) {
         Row(
@@ -96,6 +97,7 @@ private fun PracticumCardPreview() {
         PracticumCard(
             practicumName = "Pemrograman Mobile B",
             numberOfClasses = 3,
+            onClick = {}
         )
     }
 }

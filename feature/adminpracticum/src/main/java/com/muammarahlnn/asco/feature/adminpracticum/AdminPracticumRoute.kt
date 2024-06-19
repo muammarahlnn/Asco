@@ -33,6 +33,7 @@ private fun rememberAdminPracticumActions(coordinator: AdminPracticumCoordinator
     return remember(coordinator) {
         AdminPracticumActions(
             onBackClick = coordinator::navigateBack,
+            onPracticumClick = coordinator::navigateToAdminPracticumDetails,
         )
     }
 }

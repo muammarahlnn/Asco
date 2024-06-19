@@ -40,6 +40,7 @@ internal fun AdminPracticumScreen(
                 PracticumCard(
                     practicumName = "Pemrograman Mobile B",
                     numberOfClasses = 3,
+                    onClick = actions.onPracticumClick,
                 )
             }
         }
