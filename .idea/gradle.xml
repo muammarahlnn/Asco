@@ -32,6 +32,7 @@
             <option value="$PROJECT_DIR$/feature" />
             <option value="$PROJECT_DIR$/feature/adminhome" />
             <option value="$PROJECT_DIR$/feature/adminpracticum" />
+            <option value="$PROJECT_DIR$/feature/adminpracticumdetails" />
             <option value="$PROJECT_DIR$/feature/adminuser" />
             <option value="$PROJECT_DIR$/feature/adminusercreate" />
             <option value="$PROJECT_DIR$/feature/adminuserdetails" />
