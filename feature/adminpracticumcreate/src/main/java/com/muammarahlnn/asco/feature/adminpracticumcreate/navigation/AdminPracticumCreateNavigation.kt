@@ -1,7 +1,6 @@
 package com.muammarahlnn.asco.feature.adminpracticumcreate.navigation
 
 import androidx.navigation.NavController
-import androidx.navigation.NavGraph
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
 import com.muammarahlnn.asco.core.navigation.AscoDestination
@@ -15,6 +14,6 @@ fun NavGraphBuilder.adminPracticumCreateScreen(
     navController: NavController,
 ) {
     composable<AscoDestination.AdminPracticumCreate> {
-        AdminPracticumCreateRoute()
+        AdminPracticumCreateRoute(navController = navController)
     }
 }

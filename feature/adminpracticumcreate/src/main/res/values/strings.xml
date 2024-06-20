@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="add_practicum">Tambah Praktikum (%1$s/2)</string>
+    <string name="show">Tampilkan</string>
+    <string name="subject_name">Nama Mata Kuliah</string>
+    <string name="badge">Badge</string>
+    <string name="lecture_contract">Kontrak Kuliah</string>
+    <string name="clazz">Kelas</string>
+    <string name="assistant">Asisten</string>
+</resources>
