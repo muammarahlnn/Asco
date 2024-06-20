@@ -42,4 +42,8 @@ internal class AdminPracticumCoordinator(
     fun navigateToAdminPracticumDetails() {
         navController.navigate(AscoDestination.AdminPracticumDetails)
     }
+
+    fun navigateToAdminPracticumCreate() {
+        navController.navigate(AscoDestination.AdminPracticumCreate)
+    }
 }

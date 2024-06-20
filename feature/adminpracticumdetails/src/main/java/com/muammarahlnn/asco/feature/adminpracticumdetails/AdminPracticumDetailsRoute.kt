@@ -36,6 +36,7 @@ private fun rememberAdminPracticumDetailsActions(
     return remember(coordinator) {
         AdminPracticumDetailsActions(
             onBackClick = coordinator::navigateBack,
+            onEditClick = coordinator::navigateToAdminPracticumCreate,
         )
     }
 }

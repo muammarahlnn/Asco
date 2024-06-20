@@ -7,6 +7,7 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import com.muammarahlnn.asco.feature.adminhome.navigation.adminHomeScreen
 import com.muammarahlnn.asco.feature.adminpracticum.navigation.adminPracticumScreen
+import com.muammarahlnn.asco.feature.adminpracticumcreate.navigation.adminPracticumCreateScreen
 import com.muammarahlnn.asco.feature.adminpracticumdetails.navigation.adminPracticumDetailsScreen
 import com.muammarahlnn.asco.feature.adminuser.navigation.adminUserScreen
 import com.muammarahlnn.asco.feature.adminusercreate.navigation.adminUserCreateScreen
@@ -61,5 +62,6 @@ internal fun AscoNavHost(
         adminUserCreateScreen(navController)
         adminPracticumScreen(navController)
         adminPracticumDetailsScreen(navController)
+        adminPracticumCreateScreen(navController)
     }
 }

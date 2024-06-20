@@ -34,7 +34,7 @@ internal fun AdminPracticumDetailsScreen(
         topBar = {
             AdminPracticumDetailsTopAppBar(
                 onBackClick = actions.onBackClick,
-                onEditClick = {},
+                onEditClick = actions.onEditClick,
             )
         },
         modifier = Modifier.fillMaxSize(),

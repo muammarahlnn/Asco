@@ -34,6 +34,7 @@ private fun rememberAdminPracticumActions(coordinator: AdminPracticumCoordinator
         AdminPracticumActions(
             onBackClick = coordinator::navigateBack,
             onPracticumClick = coordinator::navigateToAdminPracticumDetails,
+            onFabAddButtonClick = coordinator::navigateToAdminPracticumCreate,
         )
     }
 }

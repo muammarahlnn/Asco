@@ -5,6 +5,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavController
+import com.muammarahlnn.asco.core.navigation.AscoDestination
 import kotlinx.coroutines.CoroutineScope
 
 /**
@@ -35,5 +36,9 @@ internal class AdminPracticumDetailsCoordinator(
 
     fun navigateBack() {
         navController.navigateUp()
+    }
+
+    fun navigateToAdminPracticumCreate() {
+        navController.navigate(AscoDestination.AdminPracticumCreate)
     }
 }
