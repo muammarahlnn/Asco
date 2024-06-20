@@ -2,19 +2,15 @@ package com.muammarahlnn.asco.feature.adminpracticum.component
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.ArrowBackIosNew
-import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Text
-import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.muammarahlnn.asco.core.designsystem.theme.AscoTheme
-import com.muammarahlnn.asco.core.designsystem.theme.DarkerPurple
 import com.muammarahlnn.asco.core.designsystem.theme.PureWhite
+import com.muammarahlnn.asco.core.ui.component.AscoDarkCenteredTopAppBar
 import com.muammarahlnn.asco.feature.adminpracticum.R
 
 /**
@@ -26,14 +22,8 @@ import com.muammarahlnn.asco.feature.adminpracticum.R
 internal fun AdminPracticumTopAppBar(
     onBackClick: () -> Unit,
 ) {
-    CenterAlignedTopAppBar(
-        title = {
-            Text(
-                text = stringResource(id = R.string.practicum_data),
-                style = MaterialTheme.typography.titleMedium,
-                color = PureWhite,
-            )
-        },
+    AscoDarkCenteredTopAppBar(
+        title = stringResource(id = R.string.practicum_data),
         navigationIcon = {
             IconButton(
                 onClick = onBackClick,
@@ -45,9 +35,6 @@ internal fun AdminPracticumTopAppBar(
                 )
             }
         },
-        colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
-            containerColor = DarkerPurple,
-        ),
     )
 }
 

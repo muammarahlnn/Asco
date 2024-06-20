@@ -3,19 +3,14 @@ package com.muammarahlnn.asco.feature.adminuser.component
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.ArrowBackIosNew
 import androidx.compose.material.icons.rounded.FilterList
-import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Text
-import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.material3.TopAppBarScrollBehavior
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
-import com.muammarahlnn.asco.core.designsystem.theme.DarkerPurple
 import com.muammarahlnn.asco.core.designsystem.theme.PureWhite
+import com.muammarahlnn.asco.core.ui.component.AscoDarkCenteredTopAppBar
 import com.muammarahlnn.asco.feature.adminuser.R
 
 /**
@@ -28,16 +23,9 @@ internal fun AdminUserTopAppBar(
     scrollBehavior: TopAppBarScrollBehavior,
     onBackClick: () -> Unit,
     onFilterClick: () -> Unit,
-    modifier: Modifier = Modifier,
 ) {
-    CenterAlignedTopAppBar(
-        title = {
-            Text(
-                text = stringResource(id = R.string.user_data),
-                style = MaterialTheme.typography.titleMedium,
-                color = PureWhite,
-            )
-        },
+    AscoDarkCenteredTopAppBar(
+        title = stringResource(id = R.string.user_data),
         navigationIcon = {
             IconButton(
                 onClick = onBackClick,
@@ -60,11 +48,6 @@ internal fun AdminUserTopAppBar(
                 )
             }
         },
-        colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
-            containerColor = DarkerPurple,
-            scrolledContainerColor = DarkerPurple,
-        ),
         scrollBehavior = scrollBehavior,
-        modifier = modifier,
     )
 }

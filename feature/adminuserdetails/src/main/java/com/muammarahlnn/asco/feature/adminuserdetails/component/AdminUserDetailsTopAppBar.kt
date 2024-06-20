@@ -3,17 +3,13 @@ package com.muammarahlnn.asco.feature.adminuserdetails.component
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.ArrowBackIosNew
 import androidx.compose.material.icons.rounded.Edit
-import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Text
-import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.stringResource
-import com.muammarahlnn.asco.core.designsystem.theme.DarkerPurple
 import com.muammarahlnn.asco.core.designsystem.theme.PureWhite
+import com.muammarahlnn.asco.core.ui.component.AscoDarkCenteredTopAppBar
 import com.muammarahlnn.asco.feature.adminuserdetails.R
 
 /**
@@ -26,14 +22,8 @@ internal fun AdminUserDetailsTopAppBar(
     onBackClick: () -> Unit,
     onEditClick: () -> Unit,
 ) {
-    CenterAlignedTopAppBar(
-        title = {
-            Text(
-                text = stringResource(id = R.string.user_details),
-                style = MaterialTheme.typography.titleMedium,
-                color = PureWhite,
-            )
-        },
+    AscoDarkCenteredTopAppBar(
+        title = stringResource(id = R.string.user_details),
         navigationIcon = {
             IconButton(
                 onClick = onBackClick,
@@ -56,8 +46,5 @@ internal fun AdminUserDetailsTopAppBar(
                 )
             }
         },
-        colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
-            containerColor = DarkerPurple,
-        ),
     )
 }
