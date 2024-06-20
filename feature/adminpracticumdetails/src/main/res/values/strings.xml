@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="practicum_details">Detail Praktikum</string>
+    <string name="subject">Mata Kuliah</string>
+    <string name="clazz">Kelas</string>
+    <string name="assistant">Asisten</string>
+</resources>

@@ -60,6 +60,6 @@ internal fun AscoNavHost(
         adminUserDetailsScreen(navController)
         adminUserCreateScreen(navController)
         adminPracticumScreen(navController)
-        adminPracticumDetailsScreen()
+        adminPracticumDetailsScreen(navController)
     }
 }
