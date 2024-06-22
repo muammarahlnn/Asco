@@ -6,8 +6,6 @@
     <string name="filter_by_assistant">Asisten</string>
     <string name="filter_by_mentee">Praktikan</string>
     <string name="filter_title">Filter</string>
-    <string name="filter_dialog_confirm">Terapkan</string>
-    <string name="filter_dialog_cancel">Batal</string>
     <string name="filter_sort_by_text">Urutkan berdasarkan</string>
     <string name="sort_by_created_at">Waktu dibuat</string>
     <string name="sort_by_name">Nama</string>
