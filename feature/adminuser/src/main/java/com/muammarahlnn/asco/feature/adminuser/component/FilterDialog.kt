@@ -7,13 +7,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.AlertDialog
-import androidx.compose.material3.DropdownMenuItem
-import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.ExposedDropdownMenuBox
-import androidx.compose.material3.ExposedDropdownMenuDefaults
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.OutlinedTextField
-import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
@@ -25,11 +19,10 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.muammarahlnn.asco.core.designsystem.theme.DarkBlue
 import com.muammarahlnn.asco.core.designsystem.theme.DarkerPurple
 import com.muammarahlnn.asco.core.designsystem.theme.Gray
-import com.muammarahlnn.asco.core.designsystem.theme.PureWhite
 import com.muammarahlnn.asco.core.designsystem.theme.White
+import com.muammarahlnn.asco.core.ui.component.GrayOutlinedDropdownMenu
 import com.muammarahlnn.asco.feature.adminuser.R
 
 /**
@@ -177,7 +170,6 @@ private fun FilterDialogContent(
     }
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun FilterDropdownMenu(
     value: String,
@@ -187,51 +179,17 @@ private fun FilterDropdownMenu(
     onExpandedChange: (Boolean) -> Unit,
     modifier: Modifier = Modifier
 ) {
-    ExposedDropdownMenuBox(
-        expanded = isExpanded,
+    GrayOutlinedDropdownMenu(
+        value = value,
+        isExpanded = isExpanded,
+        menuItems = menuItems,
+        onItemClick = { index, _ ->
+            onValueChange(index)
+            onExpandedChange(false)
+        },
         onExpandedChange = onExpandedChange,
         modifier = modifier,
-    ) {
-        OutlinedTextField(
-            value = value,
-            onValueChange = {},
-            trailingIcon = {
-                ExposedDropdownMenuDefaults.TrailingIcon(expanded = isExpanded)
-            },
-            readOnly = true,
-            maxLines = 1,
-            shape = RoundedCornerShape(16.dp),
-            colors = OutlinedTextFieldDefaults.colors(
-                focusedBorderColor = DarkBlue,
-                unfocusedBorderColor = DarkBlue,
-                focusedTextColor = Gray,
-                unfocusedTextColor = Gray,
-                focusedContainerColor = PureWhite,
-                unfocusedContainerColor = PureWhite,
-            ),
-            modifier = Modifier.menuAnchor()
-        )
-
-        ExposedDropdownMenu(
-            expanded = isExpanded,
-            onDismissRequest = { onExpandedChange(false) },
-        ) {
-            menuItems.forEachIndexed { index, menu ->
-                DropdownMenuItem(
-                    text = { 
-                        Text(
-                            text = menu,
-                            style = MaterialTheme.typography.bodySmall,
-                        )
-                    },
-                    onClick = {
-                        onValueChange(index)
-                        onExpandedChange(false)
-                    },
-                )
-            }
-        }
-    }
+    )
 }
 
 enum class FilterSortBy {
