@@ -7,11 +7,11 @@ import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import com.muammarahlnn.asco.core.designsystem.theme.Black
-import com.muammarahlnn.asco.core.designsystem.theme.DarkerPurple
 import com.muammarahlnn.asco.core.designsystem.theme.Gray
 import com.muammarahlnn.asco.core.designsystem.theme.PureWhite
 
@@ -24,6 +24,7 @@ fun BaseOutlinedTextField(
     value: String,
     onValueChange: (String) -> Unit,
     modifier: Modifier = Modifier,
+    borderColor: Color = Color.Unspecified,
     keyboardType: KeyboardType = KeyboardType.Text,
     imeAction: ImeAction = ImeAction.Default,
     keyboardActions: KeyboardActions = KeyboardActions(),
@@ -39,8 +40,8 @@ fun BaseOutlinedTextField(
         ),
         keyboardActions = keyboardActions,
         colors = OutlinedTextFieldDefaults.colors(
-            focusedBorderColor = DarkerPurple,
-            unfocusedBorderColor = DarkerPurple,
+            focusedBorderColor = borderColor,
+            unfocusedBorderColor = borderColor,
             focusedTextColor = Black,
             unfocusedTextColor = Gray,
             focusedContainerColor = PureWhite,

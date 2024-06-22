@@ -3,6 +3,7 @@ package com.muammarahlnn.asco.feature.adminpracticumcreate.component
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.input.ImeAction
+import com.muammarahlnn.asco.core.designsystem.theme.DarkerPurple
 import com.muammarahlnn.asco.core.ui.component.BaseOutlinedTextField
 
 /**
@@ -18,6 +19,7 @@ internal fun SubjectNameTextField(
     BaseOutlinedTextField(
         value = subjectName,
         onValueChange = onSubjectNameChange,
+        borderColor = DarkerPurple,
         imeAction = ImeAction.Next,
         modifier = modifier,
     )
