@@ -15,7 +15,9 @@ import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.muammarahlnn.asco.core.designsystem.theme.AscoTheme
 import com.muammarahlnn.asco.core.designsystem.theme.DarkBlue
 import com.muammarahlnn.asco.core.designsystem.theme.Gray
 import com.muammarahlnn.asco.core.designsystem.theme.PureWhite
@@ -95,5 +97,19 @@ fun GrayOutlinedDropdownMenu(
                 )
             }
         }
+    }
+}
+
+@Preview
+@Composable
+private fun GrayOutlinedDropdownMenuPreview() {
+    AscoTheme {
+        GrayOutlinedDropdownMenu(
+            value = "A",
+            isExpanded = true,
+            menuItems = listOf("A", "B", "C", "D", "E"),
+            onItemClick = {_, _ -> },
+            onExpandedChange = {},
+        )
     }
 }
