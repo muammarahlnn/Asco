@@ -7,4 +7,17 @@
     <string name="lecture_contract">Kontrak Kuliah</string>
     <string name="clazz">Kelas</string>
     <string name="assistant">Asisten</string>
+    <string name="create_class_dialog_title">Tambah Kelas</string>
+    <string name="class_name_text_field_label">Kelas (Auto-generated)</string>
+    <string name="recurring_day_text_field_label">Setiap Hari</string>
+    <string-array name="recurring_day_array">
+        <item>Senin</item>
+        <item>Selasa</item>
+        <item>Rabu</item>
+        <item>Kamis</item>
+        <item>Jumat</item>
+        <item>Sabtu</item>
+        <item>Minggu</item>
+    </string-array>
+    <string name="class_time_text_field_label">Jam Mulai - Akhir</string>
 </resources>

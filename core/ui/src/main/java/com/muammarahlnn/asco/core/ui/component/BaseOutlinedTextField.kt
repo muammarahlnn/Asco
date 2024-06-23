@@ -11,6 +11,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.muammarahlnn.asco.core.designsystem.theme.AscoTheme
 import com.muammarahlnn.asco.core.designsystem.theme.Black
@@ -29,6 +30,7 @@ fun BaseOutlinedTextField(
     onValueChange: (String) -> Unit,
     modifier: Modifier = Modifier,
     borderColor: Color = Color.Unspecified,
+    borderRadius: Dp = 8.dp,
     keyboardType: KeyboardType = KeyboardType.Text,
     imeAction: ImeAction = ImeAction.Default,
     keyboardActions: KeyboardActions = KeyboardActions(),
@@ -39,7 +41,7 @@ fun BaseOutlinedTextField(
     OutlinedTextField(
         value = value,
         onValueChange = onValueChange,
-        shape = RoundedCornerShape(8.dp),
+        shape = RoundedCornerShape(borderRadius),
         maxLines = 1,
         keyboardOptions = KeyboardOptions(
             keyboardType = keyboardType,

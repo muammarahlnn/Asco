@@ -49,6 +49,13 @@ private fun rememberAdminPracticumCreateActions(
             onNextClick = coordinator.viewModel::onNextClick,
             onPreviousClick = coordinator.viewModel::onPreviousClick,
             onSubjectNameChange = coordinator.viewModel::onSubjectNameChange,
+            onAddClassClick = { coordinator.viewModel.showCreateClassDialog(true) },
+            onEditClassClick = { coordinator.viewModel.showCreateClassDialog(true) },
+            onDismissCreateClassDialog = { coordinator.viewModel.showCreateClassDialog(false) },
+            onConfirmCreateClassDialog = { practicumClass ->
+                coordinator.viewModel.onConfirmCreateClassDialog(practicumClass)
+                coordinator.viewModel.showCreateClassDialog(false)
+            },
         )
     }
 }

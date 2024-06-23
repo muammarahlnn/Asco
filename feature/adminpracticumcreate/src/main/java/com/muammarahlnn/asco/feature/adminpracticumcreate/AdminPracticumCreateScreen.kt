@@ -13,6 +13,7 @@ import androidx.compose.ui.Modifier
 import com.muammarahlnn.asco.feature.adminpracticumcreate.CurrentPage.FIRST
 import com.muammarahlnn.asco.feature.adminpracticumcreate.CurrentPage.SECOND
 import com.muammarahlnn.asco.feature.adminpracticumcreate.component.AdminPracticumCreateTopAppBar
+import com.muammarahlnn.asco.feature.adminpracticumcreate.component.CreateClassDialog
 import com.muammarahlnn.asco.feature.adminpracticumcreate.component.FirstScreen
 import com.muammarahlnn.asco.feature.adminpracticumcreate.component.SecondScreen
 
@@ -25,6 +26,14 @@ internal fun AdminPracticumCreateScreen(
     state: AdminPracticumCreateState = AdminPracticumCreateState(),
     actions: AdminPracticumCreateActions = AdminPracticumCreateActions(),
 ) {
+    if (state.showCreateClassDialog) {
+        CreateClassDialog(
+            practicumClass = state.practicumClass,
+            onDismiss = actions.onDismissCreateClassDialog,
+            onConfirm = actions.onConfirmCreateClassDialog,
+        )
+    }
+
     Scaffold(
         topBar = {
             AdminPracticumCreateTopAppBar(

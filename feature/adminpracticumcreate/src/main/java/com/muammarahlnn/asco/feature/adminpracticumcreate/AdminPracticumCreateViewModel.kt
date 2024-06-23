@@ -1,6 +1,7 @@
 package com.muammarahlnn.asco.feature.adminpracticumcreate
 
 import com.muammarahlnn.asco.core.ui.viewmodel.BaseViewModel
+import com.muammarahlnn.asco.feature.adminpracticumcreate.component.PracticumClass
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
@@ -30,4 +31,15 @@ internal class AdminPracticumCreateViewModel @Inject constructor() :
         }
     }
 
+    fun showCreateClassDialog(show: Boolean) {
+        updateState {
+            copy(showCreateClassDialog = show)
+        }
+    }
+
+    fun onConfirmCreateClassDialog(practicumClass: PracticumClass) {
+        updateState {
+            copy(practicumClass = practicumClass)
+        }
+    }
 }
