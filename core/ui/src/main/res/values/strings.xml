@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="asco">asco</string>
+    <string name="OK">OK</string>
+    <string name="cancel">Batal</string>
+    <string name="input_time">Input Waktu</string>
 </resources>

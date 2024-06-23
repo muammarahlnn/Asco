@@ -2,6 +2,7 @@ package com.muammarahlnn.asco.feature.adminpracticumcreate.component
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -17,6 +18,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.Saver
 import androidx.compose.runtime.saveable.mapSaver
 import androidx.compose.runtime.saveable.rememberSaveable
@@ -36,7 +38,10 @@ import com.muammarahlnn.asco.core.designsystem.theme.PureWhite
 import com.muammarahlnn.asco.core.ui.component.BaseDialog
 import com.muammarahlnn.asco.core.ui.component.BaseOutlinedTextField
 import com.muammarahlnn.asco.core.ui.component.GrayOutlinedDropdownMenu
+import com.muammarahlnn.asco.core.ui.component.TimePickerDialog
+import com.muammarahlnn.asco.core.ui.ext.toFormattedTime
 import com.muammarahlnn.asco.feature.adminpracticumcreate.R
+import java.time.LocalTime
 
 /**
  * @Author Muammar Ahlan Abimanyu
@@ -53,6 +58,30 @@ internal fun CreateClassDialog(
         mutableStateOf(practicumClass)
     }
 
+    var showStartTimePickerDialog by remember { mutableStateOf(false) }
+    if (showStartTimePickerDialog) {
+        TimePickerDialog(
+            time = tempPracticumClass.startTime,
+            onDismiss = { showStartTimePickerDialog = false },
+            onConfirm = {
+                tempPracticumClass = tempPracticumClass.copy(startTime = it)
+                showStartTimePickerDialog = false
+            }
+        )
+    }
+
+    var showEndTimePickerDialog by remember { mutableStateOf(false) }
+    if (showEndTimePickerDialog) {
+        TimePickerDialog(
+            time = tempPracticumClass.endTime,
+            onDismiss = { showEndTimePickerDialog = false },
+            onConfirm = {
+                tempPracticumClass = tempPracticumClass.copy(endTime = it)
+                showEndTimePickerDialog = false
+            }
+        )
+    }
+
     BaseDialog(
         title = {
             Text(
@@ -65,17 +94,13 @@ internal fun CreateClassDialog(
             DialogContent(
                 className = tempPracticumClass.name,
                 recurringDay = tempPracticumClass.recurringDay,
-                startTime = tempPracticumClass.startTime,
-                endTime = tempPracticumClass.endTime,
+                startTime = tempPracticumClass.startTime.toFormattedTime(),
+                endTime = tempPracticumClass.endTime.toFormattedTime(),
                 onRecurringDayChange = {
                     tempPracticumClass = tempPracticumClass.copy(recurringDay = it)
                 },
-                onStartTimeChange = {
-                    tempPracticumClass = tempPracticumClass.copy(startTime = it)
-                },
-                onEndTimeChange = {
-                    tempPracticumClass = tempPracticumClass.copy(endTime = it)
-                },
+                onStartTimeClick = { showStartTimePickerDialog = true },
+                onEndTimeClick = { showEndTimePickerDialog = true },
             )
         },
         onDismiss = onDismiss,
@@ -91,8 +116,8 @@ private fun DialogContent(
     startTime: String,
     endTime: String,
     onRecurringDayChange: (RecurringDay) -> Unit,
-    onStartTimeChange: (String) -> Unit,
-    onEndTimeChange: (String) -> Unit,
+    onStartTimeClick: () -> Unit,
+    onEndTimeClick: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
     var isRecurringDayDropdownExpanded by rememberSaveable { mutableStateOf(false) }
@@ -145,13 +170,17 @@ private fun DialogContent(
         ) {
             TimeTextBox(
                 time = startTime,
-                modifier = Modifier.weight(1f),
+                modifier = Modifier
+                    .weight(1f)
+                    .clickable { onStartTimeClick() },
             )
             Spacer(modifier = Modifier.width(16.dp))
 
             TimeTextBox(
                 time = endTime,
-                modifier = Modifier.weight(1f),
+                modifier = Modifier
+                    .weight(1f)
+                    .clickable { onEndTimeClick() },
             )
         }
     }
@@ -185,8 +214,8 @@ private fun TimeTextBox(
 data class PracticumClass(
     val name: String = "A",
     val recurringDay: RecurringDay = RecurringDay.MONDAY,
-    val startTime: String = "10:00",
-    val endTime: String = "12:30",
+    val startTime: LocalTime = LocalTime.of(0, 0),
+    val endTime: LocalTime = LocalTime.of(0, 0),
 )
 
 val PracticumClassSaver: Saver<PracticumClass, Any> = run {
@@ -207,8 +236,8 @@ val PracticumClassSaver: Saver<PracticumClass, Any> = run {
             PracticumClass(
                 name = it[nameKey] as String,
                 recurringDay = it[recurringDayKey] as RecurringDay,
-                startTime = it[startTimeKey] as String,
-                endTime = it[endTimeKey] as String,
+                startTime = it[startTimeKey] as LocalTime,
+                endTime = it[endTimeKey] as LocalTime,
             )
         }
     )
