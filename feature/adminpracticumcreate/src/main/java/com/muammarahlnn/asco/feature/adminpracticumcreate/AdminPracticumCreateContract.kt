@@ -11,13 +11,15 @@ internal data class AdminPracticumCreateState(
     val subjectName: String = "",
     val showCreateClassDialog: Boolean = false,
     val practicumClass: PracticumClass = PracticumClass(),
+    val searchAssistantQuery: String = "",
 )
 
 internal data class AdminPracticumCreateActions(
     val onCloseClick: () -> Unit = {},
     val onNextClick: () -> Unit = {},
     val onPreviousClick: () -> Unit = {},
-    val onDoneClick: () -> Unit = {},
+    val onDoneCreatePracticumClick: () -> Unit = {},
+    val onDoneSelectAssistantClick: () -> Unit = {},
     val onSubjectNameChange: (String) -> Unit = {},
     val onShowBadgeClick: () -> Unit = {},
     val onCreateBadgeClick: () -> Unit = {},
@@ -32,4 +34,5 @@ internal data class AdminPracticumCreateActions(
     val onDeleteAssistantClick: () -> Unit = {},
     val onDismissCreateClassDialog: () -> Unit = {},
     val onConfirmCreateClassDialog: (PracticumClass) -> Unit = {},
+    val onSearchAssistantQueryChange: (String) -> Unit = {},
 )

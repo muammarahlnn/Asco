@@ -7,8 +7,7 @@ import androidx.compose.runtime.remember
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavController
-import com.muammarahlnn.asco.feature.adminpracticumcreate.CurrentPage.FIRST
-import com.muammarahlnn.asco.feature.adminpracticumcreate.CurrentPage.SECOND
+import com.muammarahlnn.asco.feature.adminpracticumcreate.CurrentPage.*
 
 /**
  * @Author Muammar Ahlan Abimanyu
@@ -30,6 +29,7 @@ internal fun AdminPracticumCreateRoute(
         when (state.currentPage) {
             FIRST -> actions.onCloseClick()
             SECOND -> actions.onPreviousClick()
+            SELECT_ASSISTANT -> actions.onNextClick()
         }
     }
 
@@ -46,8 +46,8 @@ private fun rememberAdminPracticumCreateActions(
     return remember(coordinator) {
         AdminPracticumCreateActions(
             onCloseClick = coordinator::navigateBack,
-            onNextClick = coordinator.viewModel::onNextClick,
-            onPreviousClick = coordinator.viewModel::onPreviousClick,
+            onNextClick = coordinator.viewModel::showSecondScreen,
+            onPreviousClick = coordinator.viewModel::showFirstScreen,
             onSubjectNameChange = coordinator.viewModel::onSubjectNameChange,
             onAddClassClick = { coordinator.viewModel.showCreateClassDialog(true) },
             onEditClassClick = { coordinator.viewModel.showCreateClassDialog(true) },
@@ -56,6 +56,8 @@ private fun rememberAdminPracticumCreateActions(
                 coordinator.viewModel.onConfirmCreateClassDialog(practicumClass)
                 coordinator.viewModel.showCreateClassDialog(false)
             },
+            onAddAssistantsClick = coordinator.viewModel::showSelectAssistantScreen,
+            onSearchAssistantQueryChange = coordinator.viewModel::onSearchAssistantQueryChange,
         )
     }
 }

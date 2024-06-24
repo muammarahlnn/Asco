@@ -20,4 +20,5 @@
         <item>Minggu</item>
     </string-array>
     <string name="class_time_text_field_label">Jam Mulai - Akhir</string>
+    <string name="search_assistant_placeholder">Cari nama atau username</string>
 </resources>

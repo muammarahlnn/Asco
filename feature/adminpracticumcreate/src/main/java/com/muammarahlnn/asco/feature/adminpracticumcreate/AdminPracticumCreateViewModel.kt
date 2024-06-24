@@ -13,15 +13,21 @@ import javax.inject.Inject
 internal class AdminPracticumCreateViewModel @Inject constructor() :
     BaseViewModel<AdminPracticumCreateState>(AdminPracticumCreateState()) {
 
-    fun onNextClick() {
+    fun showSecondScreen() {
         updateState {
             copy(currentPage = CurrentPage.SECOND)
         }
     }
 
-    fun onPreviousClick() {
+    fun showFirstScreen() {
         updateState {
             copy(currentPage = CurrentPage.FIRST)
+        }
+    }
+
+    fun showSelectAssistantScreen() {
+        updateState {
+            copy(currentPage = CurrentPage.SELECT_ASSISTANT)
         }
     }
 
@@ -40,6 +46,12 @@ internal class AdminPracticumCreateViewModel @Inject constructor() :
     fun onConfirmCreateClassDialog(practicumClass: PracticumClass) {
         updateState {
             copy(practicumClass = practicumClass)
+        }
+    }
+
+    fun onSearchAssistantQueryChange(query: String) {
+        updateState {
+            copy(searchAssistantQuery = query)
         }
     }
 }

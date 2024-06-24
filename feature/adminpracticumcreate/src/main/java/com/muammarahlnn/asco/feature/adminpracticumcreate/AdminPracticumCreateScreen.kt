@@ -12,10 +12,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import com.muammarahlnn.asco.feature.adminpracticumcreate.CurrentPage.FIRST
 import com.muammarahlnn.asco.feature.adminpracticumcreate.CurrentPage.SECOND
+import com.muammarahlnn.asco.feature.adminpracticumcreate.CurrentPage.SELECT_ASSISTANT
 import com.muammarahlnn.asco.feature.adminpracticumcreate.component.AdminPracticumCreateTopAppBar
 import com.muammarahlnn.asco.feature.adminpracticumcreate.component.CreateClassDialog
 import com.muammarahlnn.asco.feature.adminpracticumcreate.component.FirstScreen
 import com.muammarahlnn.asco.feature.adminpracticumcreate.component.SecondScreen
+import com.muammarahlnn.asco.feature.adminpracticumcreate.component.SelectAssistantScreen
 
 /**
  * @Author Muammar Ahlan Abimanyu
@@ -41,7 +43,8 @@ internal fun AdminPracticumCreateScreen(
                 onCloseClick = actions.onCloseClick,
                 onNextClick = actions.onNextClick,
                 onPreviousClick = actions.onPreviousClick,
-                onDoneClick = {},
+                onDoneCreatePracticumClick = actions.onDoneCreatePracticumClick,
+                onDoneSelectAssistantClick = actions.onDoneSelectAssistantClick,
             )
         },
     ) { paddingValues ->
@@ -93,6 +96,12 @@ internal fun AdminPracticumCreateScreen(
                     onDeleteAssistantClick = actions.onDeleteAssistantClick,
                     modifier = screenModifier,
                 )
+
+                SELECT_ASSISTANT -> SelectAssistantScreen(
+                    searchQuery = state.searchAssistantQuery,
+                    onSearchQueryChange = actions.onSearchAssistantQueryChange,
+                    modifier = screenModifier,
+                )
             }
         }
     }
@@ -101,4 +110,5 @@ internal fun AdminPracticumCreateScreen(
 internal enum class CurrentPage(val pageNumber: Int) {
     FIRST(1),
     SECOND(2),
+    SELECT_ASSISTANT(3),
 }

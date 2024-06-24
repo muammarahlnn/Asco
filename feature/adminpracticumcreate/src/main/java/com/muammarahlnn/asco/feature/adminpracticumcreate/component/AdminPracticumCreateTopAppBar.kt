@@ -19,6 +19,7 @@ import com.muammarahlnn.asco.core.ui.component.AscoDarkCenteredTopAppBar
 import com.muammarahlnn.asco.feature.adminpracticumcreate.CurrentPage
 import com.muammarahlnn.asco.feature.adminpracticumcreate.CurrentPage.FIRST
 import com.muammarahlnn.asco.feature.adminpracticumcreate.CurrentPage.SECOND
+import com.muammarahlnn.asco.feature.adminpracticumcreate.CurrentPage.SELECT_ASSISTANT
 import com.muammarahlnn.asco.feature.adminpracticumcreate.R
 
 /**
@@ -32,18 +33,32 @@ internal fun AdminPracticumCreateTopAppBar(
     onCloseClick: () -> Unit,
     onNextClick: () -> Unit,
     onPreviousClick: () -> Unit,
-    onDoneClick: () -> Unit,
+    onDoneCreatePracticumClick: () -> Unit,
+    onDoneSelectAssistantClick: () -> Unit,
 ) {
      AscoDarkCenteredTopAppBar(
-         title = stringResource(
-             id = R.string.add_practicum,
-             currentPage.pageNumber,
-         ),
+         title = when (currentPage) {
+             FIRST,
+             SECOND -> stringResource(
+                 id = R.string.add_practicum,
+                 currentPage.pageNumber,
+             )
+
+             SELECT_ASSISTANT -> stringResource(R.string.assistant)
+         },
          navigationIcon = {
              AnimatedContent(
                  targetState = currentPage,
                  label = "Navigation icon animation",
              ) {
+                 val backIcon = @Composable {
+                     Icon(
+                         imageVector = Icons.Rounded.ArrowBackIosNew,
+                         contentDescription = null,
+                         tint = PureWhite,
+                     )
+                 }
+
                  when (it) {
                      FIRST -> IconButton(onClick = onCloseClick) {
                          Icon(
@@ -55,11 +70,11 @@ internal fun AdminPracticumCreateTopAppBar(
                      }
 
                      SECOND -> IconButton(onClick = onPreviousClick) {
-                         Icon(
-                             imageVector = Icons.Rounded.ArrowBackIosNew,
-                             contentDescription = null,
-                             tint = PureWhite,
-                         )
+                         backIcon()
+                     }
+
+                     SELECT_ASSISTANT-> IconButton(onClick = onNextClick) {
+                         backIcon()
                      }
                  }
              }
@@ -69,6 +84,15 @@ internal fun AdminPracticumCreateTopAppBar(
                  targetState = currentPage,
                  label = "Action icon animation",
              ) {
+                 val doneIcon = @Composable {
+                     Icon(
+                         imageVector = Icons.Rounded.Check,
+                         contentDescription = null,
+                         tint = PureWhite,
+                         modifier = Modifier.size(28.dp),
+                     )
+                 }
+
                  when (it) {
                      FIRST -> IconButton(onClick = onNextClick) {
                          Icon(
@@ -78,13 +102,12 @@ internal fun AdminPracticumCreateTopAppBar(
                          )
                      }
 
-                     SECOND -> IconButton(onClick = onDoneClick) {
-                         Icon(
-                             imageVector = Icons.Rounded.Check,
-                             contentDescription = null,
-                             tint = PureWhite,
-                             modifier = Modifier.size(28.dp),
-                         )
+                     SECOND -> IconButton(onClick = onDoneCreatePracticumClick) {
+                         doneIcon()
+                     }
+
+                     SELECT_ASSISTANT -> IconButton(onClick = onDoneSelectAssistantClick) {
+                         doneIcon()
                      }
                  }
              }
