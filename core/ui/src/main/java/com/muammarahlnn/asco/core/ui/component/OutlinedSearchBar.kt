@@ -1,4 +1,4 @@
-package com.muammarahlnn.asco.feature.adminuser.component
+package com.muammarahlnn.asco.core.ui.component
 
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardActions
@@ -12,6 +12,7 @@ import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.ImeAction
@@ -19,17 +20,19 @@ import androidx.compose.ui.unit.dp
 import com.muammarahlnn.asco.core.designsystem.theme.Black
 import com.muammarahlnn.asco.core.designsystem.theme.DarkerPurple
 import com.muammarahlnn.asco.core.designsystem.theme.PureWhite
-import com.muammarahlnn.asco.feature.adminuser.R
+import com.muammarahlnn.asco.core.ui.R
 
 /**
  * @Author Muammar Ahlan Abimanyu
- * @File SearchBar, 16/06/2024 01.45
+ * @File SearchBar, 24/06/2024 18.52
  */
 @Composable
-internal fun SearchBar(
+fun OutlinedSearchBar(
     query: String,
     onQueryChange: (String) -> Unit,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    placeholder: String = stringResource(id = R.string.search_placeholder),
+    borderColor: Color = DarkerPurple,
 ) {
     val keyboardController = LocalSoftwareKeyboardController.current
     OutlinedTextField(
@@ -39,14 +42,14 @@ internal fun SearchBar(
             Icon(
                 imageVector = Icons.Rounded.Search,
                 contentDescription = stringResource(id = R.string.search_placeholder),
-                tint = DarkerPurple,
+                tint = borderColor,
             )
         },
         placeholder = {
             Text(
-                text = stringResource(id = R.string.search_placeholder),
+                text = placeholder,
                 style = MaterialTheme.typography.bodySmall,
-                color = DarkerPurple,
+                color = borderColor,
             )
         },
         shape = RoundedCornerShape(8.dp),
@@ -60,8 +63,8 @@ internal fun SearchBar(
             }
         ),
         colors = OutlinedTextFieldDefaults.colors(
-            focusedBorderColor = DarkerPurple,
-            unfocusedBorderColor = DarkerPurple,
+            focusedBorderColor = borderColor,
+            unfocusedBorderColor = borderColor,
             focusedTextColor = Black,
             unfocusedTextColor = Black,
             focusedContainerColor = PureWhite,

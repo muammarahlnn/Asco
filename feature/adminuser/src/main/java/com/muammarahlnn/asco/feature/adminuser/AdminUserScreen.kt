@@ -25,14 +25,15 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.input.nestedscroll.nestedScroll
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.muammarahlnn.asco.core.designsystem.theme.DarkerPurple
 import com.muammarahlnn.asco.core.designsystem.theme.PureWhite
 import com.muammarahlnn.asco.core.designsystem.theme.White
+import com.muammarahlnn.asco.core.ui.component.OutlinedSearchBar
 import com.muammarahlnn.asco.feature.adminuser.component.AdminUserTopAppBar
 import com.muammarahlnn.asco.feature.adminuser.component.FilterDialog
 import com.muammarahlnn.asco.feature.adminuser.component.FilterRow
-import com.muammarahlnn.asco.feature.adminuser.component.SearchBar
 import com.muammarahlnn.asco.feature.adminuser.component.UserItem
 
 /**
@@ -99,9 +100,11 @@ internal fun AdminUserScreen(
                             bottom = 8.dp,
                         )
                 ) {
-                    SearchBar(
+                    OutlinedSearchBar(
                         query = state.searchQuery,
                         onQueryChange = actions.onSearchQueryChange,
+                        placeholder = stringResource(id = R.string.search_placeholder),
+                        borderColor = DarkerPurple,
                         modifier = Modifier.fillMaxWidth(),
                     )
 
