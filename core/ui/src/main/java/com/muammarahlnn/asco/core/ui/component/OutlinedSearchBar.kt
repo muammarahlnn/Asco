@@ -1,5 +1,6 @@
 package com.muammarahlnn.asco.core.ui.component
 
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
@@ -16,7 +17,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.ImeAction
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.muammarahlnn.asco.core.designsystem.theme.AscoTheme
 import com.muammarahlnn.asco.core.designsystem.theme.Black
 import com.muammarahlnn.asco.core.designsystem.theme.DarkerPurple
 import com.muammarahlnn.asco.core.designsystem.theme.PureWhite
@@ -72,4 +75,16 @@ fun OutlinedSearchBar(
         ),
         modifier = modifier,
     )
+}
+
+@Preview
+@Composable
+private fun OutlinedSearchBarPreview() {
+    AscoTheme {
+        OutlinedSearchBar(
+            query = "",
+            onQueryChange = {},
+            modifier = Modifier.fillMaxWidth()
+        )
+    }
 }
