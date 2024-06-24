@@ -10,10 +10,9 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import com.muammarahlnn.asco.feature.adminpracticumcreate.CurrentPage.FIRST
-import com.muammarahlnn.asco.feature.adminpracticumcreate.CurrentPage.SECOND
-import com.muammarahlnn.asco.feature.adminpracticumcreate.CurrentPage.SELECT_ASSISTANT
+import com.muammarahlnn.asco.feature.adminpracticumcreate.CurrentPage.*
 import com.muammarahlnn.asco.feature.adminpracticumcreate.component.AdminPracticumCreateTopAppBar
+import com.muammarahlnn.asco.feature.adminpracticumcreate.component.CreateBadgeScreen
 import com.muammarahlnn.asco.feature.adminpracticumcreate.component.CreateClassDialog
 import com.muammarahlnn.asco.feature.adminpracticumcreate.component.FirstScreen
 import com.muammarahlnn.asco.feature.adminpracticumcreate.component.SecondScreen
@@ -102,13 +101,18 @@ internal fun AdminPracticumCreateScreen(
                     onSearchQueryChange = actions.onSearchAssistantQueryChange,
                     modifier = screenModifier,
                 )
+
+                CREATE_BADGE -> CreateBadgeScreen(
+                    modifier = screenModifier,
+                )
             }
         }
     }
 }
 
-internal enum class CurrentPage(val pageNumber: Int) {
-    FIRST(1),
-    SECOND(2),
-    SELECT_ASSISTANT(3),
+internal enum class CurrentPage {
+    FIRST,
+    SECOND,
+    SELECT_ASSISTANT,
+    CREATE_BADGE,
 }

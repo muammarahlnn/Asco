@@ -28,7 +28,8 @@ internal fun AdminPracticumCreateRoute(
     BackHandler {
         when (state.currentPage) {
             FIRST -> actions.onCloseClick()
-            SECOND -> actions.onPreviousClick()
+            SECOND,
+            CREATE_BADGE -> actions.onPreviousClick()
             SELECT_ASSISTANT -> actions.onNextClick()
         }
     }
@@ -58,6 +59,7 @@ private fun rememberAdminPracticumCreateActions(
             },
             onAddAssistantsClick = coordinator.viewModel::showSelectAssistantScreen,
             onSearchAssistantQueryChange = coordinator.viewModel::onSearchAssistantQueryChange,
+            onCreateBadgeClick = coordinator.viewModel::showCreateBadgeScreen,
         )
     }
 }

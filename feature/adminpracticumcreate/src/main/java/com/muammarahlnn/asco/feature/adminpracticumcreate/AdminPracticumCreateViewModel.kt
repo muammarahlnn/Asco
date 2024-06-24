@@ -31,6 +31,12 @@ internal class AdminPracticumCreateViewModel @Inject constructor() :
         }
     }
 
+    fun showCreateBadgeScreen() {
+        updateState {
+            copy(currentPage = CurrentPage.CREATE_BADGE)
+        }
+    }
+
     fun onSubjectNameChange(subjectName: String) {
         updateState {
             copy(subjectName = subjectName)

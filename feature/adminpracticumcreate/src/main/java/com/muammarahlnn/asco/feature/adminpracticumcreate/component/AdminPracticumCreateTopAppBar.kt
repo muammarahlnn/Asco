@@ -17,9 +17,7 @@ import androidx.compose.ui.unit.dp
 import com.muammarahlnn.asco.core.designsystem.theme.PureWhite
 import com.muammarahlnn.asco.core.ui.component.AscoDarkCenteredTopAppBar
 import com.muammarahlnn.asco.feature.adminpracticumcreate.CurrentPage
-import com.muammarahlnn.asco.feature.adminpracticumcreate.CurrentPage.FIRST
-import com.muammarahlnn.asco.feature.adminpracticumcreate.CurrentPage.SECOND
-import com.muammarahlnn.asco.feature.adminpracticumcreate.CurrentPage.SELECT_ASSISTANT
+import com.muammarahlnn.asco.feature.adminpracticumcreate.CurrentPage.*
 import com.muammarahlnn.asco.feature.adminpracticumcreate.R
 
 /**
@@ -41,10 +39,10 @@ internal fun AdminPracticumCreateTopAppBar(
              FIRST,
              SECOND -> stringResource(
                  id = R.string.add_practicum,
-                 currentPage.pageNumber,
+                 currentPage.ordinal + 1,
              )
-
              SELECT_ASSISTANT -> stringResource(R.string.assistant)
+             CREATE_BADGE -> stringResource(id = R.string.class_badge)
          },
          navigationIcon = {
              AnimatedContent(
@@ -69,11 +67,12 @@ internal fun AdminPracticumCreateTopAppBar(
                          )
                      }
 
-                     SECOND -> IconButton(onClick = onPreviousClick) {
+                     SECOND,
+                     CREATE_BADGE -> IconButton(onClick = onPreviousClick) {
                          backIcon()
                      }
 
-                     SELECT_ASSISTANT-> IconButton(onClick = onNextClick) {
+                     SELECT_ASSISTANT -> IconButton(onClick = onNextClick) {
                          backIcon()
                      }
                  }
@@ -109,6 +108,8 @@ internal fun AdminPracticumCreateTopAppBar(
                      SELECT_ASSISTANT -> IconButton(onClick = onDoneSelectAssistantClick) {
                          doneIcon()
                      }
+
+                     else -> Unit
                  }
              }
          }

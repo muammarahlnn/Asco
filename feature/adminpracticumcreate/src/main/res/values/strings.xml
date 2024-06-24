@@ -21,4 +21,9 @@
     </string-array>
     <string name="class_time_text_field_label">Jam Mulai - Akhir</string>
     <string name="search_assistant_placeholder">Cari nama atau username</string>
+    <string name="class_badge">Badge Kelas</string>
+    <string name="icon">Icon</string>
+    <string name="color">Color</string>
+    <string name="icon_size">Icon Size</string>
+    <string name="generate">Generate</string>
 </resources>
