@@ -1,10 +1,6 @@
-package com.muammarahlnn.asco.feature.adminpracticumcreate.component
+package com.muammarahlnn.asco.feature.adminpracticumcreate.component.createbadge
 
-import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
 import androidx.compose.foundation.horizontalScroll
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.BoxScope
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.RowScope
@@ -13,37 +9,29 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.rounded.Code
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
-import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Slider
 import androidx.compose.material3.SliderDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.muammarahlnn.asco.core.designsystem.theme.AscoTheme
 import com.muammarahlnn.asco.core.designsystem.theme.DarkerPurple
-import com.muammarahlnn.asco.core.designsystem.theme.Gray
-import com.muammarahlnn.asco.core.designsystem.theme.GrayBlue
 import com.muammarahlnn.asco.core.designsystem.theme.LightGray
 import com.muammarahlnn.asco.core.designsystem.theme.PureWhite
 import com.muammarahlnn.asco.core.designsystem.theme.Purple
@@ -57,12 +45,17 @@ import com.muammarahlnn.asco.feature.adminpracticumcreate.R
 internal fun CreateBadgeScreen(
     modifier: Modifier = Modifier
 ) {
+    var selectedIconResIndex by remember { mutableIntStateOf(0) }
+    var selectedColor by remember { mutableStateOf(colors[0]) }
+
     Column(
         modifier = modifier.verticalScroll(
             state = rememberScrollState(),
         ),
     ) {
         BadgePreview(
+            icon = painterResource(id = icons[selectedIconResIndex].iconRes),
+            color = selectedColor,
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(
@@ -77,9 +70,10 @@ internal fun CreateBadgeScreen(
         BadgeDecorationRow(
             title = stringResource(id = R.string.icon),
         ) {
-            repeat(8) {
+            icons.forEachIndexed { index, icon ->
                 IconItem(
-                    name = "Mobile",
+                    iconState = icon,
+                    onClick = { selectedIconResIndex = index },
                     modifier = Modifier.padding(end = 8.dp)
                 )
             }
@@ -90,9 +84,10 @@ internal fun CreateBadgeScreen(
         BadgeDecorationRow(
             title = stringResource(id = R.string.color),
         ) {
-            repeat(8) {
+            colors.forEach { color ->
                 ColorItem(
-                    color = Purple,
+                    color = color,
+                    onClick = { selectedColor = it },
                     modifier = Modifier.padding(end = 8.dp)
                 )
             }
@@ -128,22 +123,6 @@ internal fun CreateBadgeScreen(
 }
 
 @Composable
-private fun BadgePreview(modifier: Modifier = Modifier) {
-    Box(
-        contentAlignment = Alignment.Center,
-        modifier = modifier
-            .clip(RoundedCornerShape(12.dp))
-            .background(PureWhite),
-    ) {
-        Image(
-            imageVector = rememberBadgeBorder(),
-            contentDescription = null,
-            modifier = Modifier.padding(vertical = 48.dp)
-        )
-    }
-}
-
-@Composable
 private fun BadgeDecorationRow(
     title: String,
     modifier: Modifier = Modifier,
@@ -174,64 +153,6 @@ private fun BadgeDecorationRow(
             rowContent()
         }
     }
-}
-
-@Composable
-private fun IconItem(
-    name: String,
-    modifier: Modifier = Modifier
-) {
-    Column(
-        horizontalAlignment = Alignment.CenterHorizontally,
-        modifier = modifier,
-    ) {
-        ItemBox {
-            Icon(
-                imageVector = Icons.Rounded.Code,
-                contentDescription = null,
-                tint = GrayBlue,
-                modifier = Modifier.size(42.dp)
-            )
-        }
-
-        Spacer(modifier = Modifier.height(4.dp))
-        
-        Text(
-            text = name,
-            style = MaterialTheme.typography.bodySmall,
-            color = Gray,
-        )
-    }
-}
-
-@Composable
-private fun ColorItem(
-    color: Color,
-    modifier: Modifier = Modifier
-) {
-    ItemBox(modifier = modifier) {
-        Box(
-            modifier = Modifier
-                .clip(CircleShape)
-                .background(color)
-                .size(42.dp)
-        )
-    }
-}
-
-@Composable
-private fun ItemBox(
-    modifier: Modifier = Modifier,
-    content: @Composable BoxScope.() -> Unit,
-) {
-    Box(
-        contentAlignment = Alignment.Center,
-        modifier = modifier
-            .clip(RoundedCornerShape(10.dp))
-            .background(PureWhite)
-            .size(80.dp),
-        content = content,
-    )
 }
 
 @Composable

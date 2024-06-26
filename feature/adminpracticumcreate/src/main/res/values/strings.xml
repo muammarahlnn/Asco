@@ -26,4 +26,9 @@
     <string name="color">Color</string>
     <string name="icon_size">Icon Size</string>
     <string name="generate">Generate</string>
+    <string name="icon_default_name">Default</string>
+    <string name="icon_mobile_name">Mobile</string>
+    <string name="icon_web_name">Web</string>
+    <string name="icon_database_name">Database</string>
+    <string name="icon_oop_name">OOP</string>
 </resources>
