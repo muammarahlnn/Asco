@@ -15,11 +15,10 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Slider
-import androidx.compose.material3.SliderDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableFloatStateOf
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -32,7 +31,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.muammarahlnn.asco.core.designsystem.theme.AscoTheme
 import com.muammarahlnn.asco.core.designsystem.theme.DarkerPurple
-import com.muammarahlnn.asco.core.designsystem.theme.LightGray
 import com.muammarahlnn.asco.core.designsystem.theme.PureWhite
 import com.muammarahlnn.asco.core.designsystem.theme.Purple
 import com.muammarahlnn.asco.feature.adminpracticumcreate.R
@@ -46,7 +44,8 @@ internal fun CreateBadgeScreen(
     modifier: Modifier = Modifier
 ) {
     var selectedIconResIndex by remember { mutableIntStateOf(0) }
-    var selectedColor by remember { mutableStateOf(colors[0]) }
+    var selectedIconColor by remember { mutableStateOf(colors[0]) }
+    var currentIconSize by remember { mutableFloatStateOf(MIN_ICON_SIZE) }
 
     Column(
         modifier = modifier.verticalScroll(
@@ -55,7 +54,8 @@ internal fun CreateBadgeScreen(
     ) {
         BadgePreview(
             icon = painterResource(id = icons[selectedIconResIndex].iconRes),
-            color = selectedColor,
+            badgeColor = selectedIconColor,
+            iconSize = currentIconSize,
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(
@@ -87,7 +87,7 @@ internal fun CreateBadgeScreen(
             colors.forEach { color ->
                 ColorItem(
                     color = color,
-                    onClick = { selectedColor = it },
+                    onClick = { selectedIconColor = it },
                     modifier = Modifier.padding(end = 8.dp)
                 )
             }
@@ -96,6 +96,8 @@ internal fun CreateBadgeScreen(
         Spacer(modifier = Modifier.height(16.dp))
 
         IconSizeContent(
+            iconSize = currentIconSize,
+            onIconSizeChange = { currentIconSize = it },
             modifier = Modifier.padding(horizontal = 16.dp)
         )
 
@@ -153,44 +155,6 @@ private fun BadgeDecorationRow(
             rowContent()
         }
     }
-}
-
-@Composable
-private fun IconSizeContent(modifier: Modifier = Modifier) {
-    Column(modifier = modifier) {
-        Text(
-            text = stringResource(id = R.string.icon_size),
-            style = MaterialTheme.typography.labelLarge.copy(
-                fontWeight = FontWeight.SemiBold,
-            ),
-            color = DarkerPurple,
-        )
-
-        Spacer(modifier = Modifier.height(8.dp))
-
-        IconSizeSlider(
-            modifier = Modifier.fillMaxWidth()
-        )
-    }
-}
-
-@Composable
-private fun IconSizeSlider(
-    modifier: Modifier = Modifier
-) {
-    var iconSize by remember { mutableStateOf(0f) }
-    Slider(
-        value = iconSize,
-        onValueChange = { iconSize = it },
-        colors = SliderDefaults.colors(
-            thumbColor = DarkerPurple,
-            activeTrackColor = DarkerPurple,
-            activeTickColor = DarkerPurple,
-            inactiveTickColor = LightGray,
-            inactiveTrackColor = LightGray,
-        ),
-        modifier = modifier,
-    )
 }
 
 @Preview

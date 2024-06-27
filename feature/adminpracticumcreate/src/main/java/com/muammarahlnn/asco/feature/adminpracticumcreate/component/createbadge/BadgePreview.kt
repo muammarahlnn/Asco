@@ -19,7 +19,6 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.muammarahlnn.asco.core.designsystem.theme.AscoTheme
-import com.muammarahlnn.asco.core.designsystem.theme.GrayBlue
 import com.muammarahlnn.asco.core.designsystem.theme.PureWhite
 import com.muammarahlnn.asco.core.designsystem.theme.PurpleBlue
 import com.muammarahlnn.asco.feature.adminpracticumcreate.R
@@ -28,10 +27,14 @@ import com.muammarahlnn.asco.feature.adminpracticumcreate.R
  * @Author Muammar Ahlan Abimanyu
  * @File BadgePreview, 25/06/2024 18.21
  */
+const val MIN_ICON_SIZE = 120f
+const val MAX_ICON_SIZE = 220f
+
 @Composable
 internal fun BadgePreview(
     icon: Painter,
-    color: Color,
+    badgeColor: Color,
+    iconSize: Float,
     modifier: Modifier = Modifier
 ) {
     Box(
@@ -40,11 +43,11 @@ internal fun BadgePreview(
             .clip(RoundedCornerShape(12.dp))
             .background(PureWhite),
     ) {
-        val badgeWidth = 220.dp
-        val badgeHeight = 240.dp
+        val badgeWidth = iconSize.dp
+        val badgeHeight = (iconSize + 20).dp
 
         Image(
-            imageVector = rememberBadgeBorder(color),
+            imageVector = rememberBadgeBorder(badgeColor),
             contentDescription = null,
             modifier = Modifier
                 .padding(vertical = 48.dp)
@@ -75,7 +78,8 @@ private fun BadgePreviewPreview() {
     AscoTheme {
         BadgePreview(
             icon = painterResource(id = R.drawable.ic_android),
-            color = PurpleBlue,
+            badgeColor = PurpleBlue,
+            iconSize = 120f
         )
     }
 }
