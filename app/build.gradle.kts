@@ -44,6 +44,7 @@ dependencies {
     implementation(project(":feature:adminpracticum"))
     implementation(project(":feature:adminpracticumdetails"))
     implementation(project(":feature:adminpracticumcreate"))
+    implementation(project(":feature:adminclassmeeting"))
 
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.appcompat)

@@ -31,4 +31,7 @@ sealed interface AscoDestination {
 
     @Serializable
     data object AdminPracticumCreate : AscoDestination
+
+    @Serializable
+    data object AdminClassMeeting : AscoDestination
 }

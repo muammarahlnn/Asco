@@ -5,6 +5,7 @@ import androidx.compose.animation.core.tween
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
+import com.muammarahlnn.asco.feature.adminclassmeeting.navigation.adminClassMeetingScreen
 import com.muammarahlnn.asco.feature.adminhome.navigation.adminHomeScreen
 import com.muammarahlnn.asco.feature.adminpracticum.navigation.adminPracticumScreen
 import com.muammarahlnn.asco.feature.adminpracticumcreate.navigation.adminPracticumCreateScreen
@@ -63,5 +64,6 @@ internal fun AscoNavHost(
         adminPracticumScreen(navController)
         adminPracticumDetailsScreen(navController)
         adminPracticumCreateScreen(navController)
+        adminClassMeetingScreen(navController)
     }
 }
