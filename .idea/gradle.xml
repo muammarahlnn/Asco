@@ -30,6 +30,7 @@
             <option value="$PROJECT_DIR$/core/navigation" />
             <option value="$PROJECT_DIR$/core/ui" />
             <option value="$PROJECT_DIR$/feature" />
+            <option value="$PROJECT_DIR$/feature/adminclassmeeting" />
             <option value="$PROJECT_DIR$/feature/adminhome" />
             <option value="$PROJECT_DIR$/feature/adminpracticum" />
             <option value="$PROJECT_DIR$/feature/adminpracticumcreate" />
