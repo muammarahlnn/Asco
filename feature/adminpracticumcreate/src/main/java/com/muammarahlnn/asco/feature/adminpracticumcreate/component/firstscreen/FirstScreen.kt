@@ -1,4 +1,4 @@
-package com.muammarahlnn.asco.feature.adminpracticumcreate.component
+package com.muammarahlnn.asco.feature.adminpracticumcreate.component.firstscreen
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer

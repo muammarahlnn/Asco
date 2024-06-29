@@ -1,4 +1,4 @@
-package com.muammarahlnn.asco.feature.adminpracticumcreate.component
+package com.muammarahlnn.asco.feature.adminpracticumcreate.component.secondscreen
 
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Spacer
@@ -6,7 +6,9 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.muammarahlnn.asco.core.designsystem.theme.AscoTheme
 
 /**
  * @Author Muammar Ahlan Abimanyu
@@ -38,6 +40,20 @@ internal fun SecondScreen(
         assistantsContent(
             onAddAssistantsClick = onAddAssistantsClick,
             onDeleteAssistantClick = onDeleteAssistantClick,
+        )
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+private fun SecondScreenPreview() {
+    AscoTheme {
+        SecondScreen(
+            onAddClassClick = {},
+            onEditClassClick = {},
+            onDeleteClassClick = {},
+            onAddAssistantsClick = {},
+            onDeleteAssistantClick = {},
         )
     }
 }

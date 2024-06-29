@@ -1,4 +1,4 @@
-package com.muammarahlnn.asco.feature.adminpracticumcreate.component
+package com.muammarahlnn.asco.feature.adminpracticumcreate.component.selectassistant
 
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.foundation.Image

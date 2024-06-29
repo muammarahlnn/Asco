@@ -1,4 +1,4 @@
-package com.muammarahlnn.asco.feature.adminpracticumcreate.component
+package com.muammarahlnn.asco.feature.adminpracticumcreate.component.firstscreen
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -10,8 +10,8 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.outlined.Create
 import androidx.compose.material.icons.outlined.Delete
-import androidx.compose.material.icons.outlined.Upload
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Icon
@@ -33,12 +33,12 @@ import com.muammarahlnn.asco.feature.adminpracticumcreate.R
 
 /**
  * @Author Muammar Ahlan Abimanyu
- * @File LectureContractRow, 20/06/2024 23.01
+ * @File BadgeRow, 20/06/2024 22.52
  */
 @Composable
-internal fun LectureContractRow(
+internal fun BadgeRow(
     onShowClick: () -> Unit,
-    onUploadClick: () -> Unit,
+    onCreateClick: () -> Unit,
     onDeleteClick: () -> Unit,
     modifier: Modifier = Modifier
 ) {
@@ -68,10 +68,10 @@ internal fun LectureContractRow(
             modifier = Modifier
                 .clip(RoundedCornerShape(8.dp))
                 .background(Purple)
-                .clickable { onUploadClick() },
+                .clickable { onCreateClick() },
         ) {
             Icon(
-                imageVector = Icons.Outlined.Upload,
+                imageVector = Icons.Outlined.Create,
                 contentDescription = null,
                 tint = PureWhite,
                 modifier = Modifier
@@ -101,11 +101,11 @@ internal fun LectureContractRow(
 
 @Preview
 @Composable
-private fun LectureContractPreview() {
+private fun BadgeRowPreview() {
     AscoTheme {
-        LectureContractRow(
+        BadgeRow(
             onShowClick = {},
-            onUploadClick = {},
+            onCreateClick = {},
             onDeleteClick = {},
             modifier = Modifier.fillMaxWidth(),
         )
