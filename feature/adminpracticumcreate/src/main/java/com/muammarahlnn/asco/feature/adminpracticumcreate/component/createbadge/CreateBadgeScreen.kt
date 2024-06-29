@@ -45,7 +45,7 @@ internal fun CreateBadgeScreen(
 ) {
     var selectedIconResIndex by remember { mutableIntStateOf(0) }
     var selectedIconColor by remember { mutableStateOf(colors[0]) }
-    var currentIconSize by remember { mutableFloatStateOf(MIN_ICON_SIZE) }
+    var currentIconSizePercentage by remember { mutableFloatStateOf(MIN_ICON_SIZE_PERCENTAGE) }
 
     Column(
         modifier = modifier.verticalScroll(
@@ -55,7 +55,7 @@ internal fun CreateBadgeScreen(
         BadgePreview(
             icon = painterResource(id = icons[selectedIconResIndex].iconRes),
             badgeColor = selectedIconColor,
-            iconSize = currentIconSize,
+            iconSizePercentage = currentIconSizePercentage,
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(
@@ -96,8 +96,8 @@ internal fun CreateBadgeScreen(
         Spacer(modifier = Modifier.height(16.dp))
 
         IconSizeContent(
-            iconSize = currentIconSize,
-            onIconSizeChange = { currentIconSize = it },
+            iconSize = currentIconSizePercentage,
+            onIconSizeChange = { currentIconSizePercentage = it },
             modifier = Modifier.padding(horizontal = 16.dp)
         )
 

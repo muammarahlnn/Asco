@@ -55,7 +55,7 @@ private fun IconSizeSlider(
     Slider(
         value = iconSize,
         onValueChange = onIconSizeChange,
-        valueRange  = MIN_ICON_SIZE..MAX_ICON_SIZE,
+        valueRange  = MIN_ICON_SIZE_PERCENTAGE..MAX_ICON_SIZE_PERCENTAGE,
         colors = SliderDefaults.colors(
             thumbColor = DarkerPurple,
             activeTrackColor = DarkerPurple,

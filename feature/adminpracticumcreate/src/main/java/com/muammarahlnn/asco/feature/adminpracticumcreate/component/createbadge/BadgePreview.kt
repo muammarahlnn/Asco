@@ -27,14 +27,15 @@ import com.muammarahlnn.asco.feature.adminpracticumcreate.R
  * @Author Muammar Ahlan Abimanyu
  * @File BadgePreview, 25/06/2024 18.21
  */
-const val MIN_ICON_SIZE = 120f
-const val MAX_ICON_SIZE = 220f
+
+const val MIN_ICON_SIZE_PERCENTAGE = 0.4f
+const val MAX_ICON_SIZE_PERCENTAGE = 0.5f
 
 @Composable
 internal fun BadgePreview(
     icon: Painter,
     badgeColor: Color,
-    iconSize: Float,
+    iconSizePercentage: Float,
     modifier: Modifier = Modifier
 ) {
     Box(
@@ -43,8 +44,8 @@ internal fun BadgePreview(
             .clip(RoundedCornerShape(12.dp))
             .background(PureWhite),
     ) {
-        val badgeWidth = iconSize.dp
-        val badgeHeight = (iconSize + 20).dp
+        val badgeWidth = 200.dp
+        val badgeHeight = 220.dp
 
         Image(
             imageVector = rememberBadgeBorder(badgeColor),
@@ -64,8 +65,8 @@ internal fun BadgePreview(
                 contentDescription = null,
                 tint = PureWhite,
                 modifier = Modifier
-                    .width(badgeWidth / 2)
-                    .height(badgeHeight / 2)
+                    .width(badgeWidth * iconSizePercentage)
+                    .height(badgeHeight * iconSizePercentage)
                     .padding(16.dp)
             )
         }
@@ -79,7 +80,7 @@ private fun BadgePreviewPreview() {
         BadgePreview(
             icon = painterResource(id = R.drawable.ic_android),
             badgeColor = PurpleBlue,
-            iconSize = 120f
+            iconSizePercentage = 0.4f,
         )
     }
 }
