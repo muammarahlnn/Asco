@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="choose_practicum">Pilih Praktikum</string>
+    <string name="total_classes">%1$s Kelas</string>
+    <string name="total_meetings">%1$s Pertemuan</string>
+    <string name="clazz">Kelas</string>
+    <string name="meeting">Pertemuan</string>
+</resources>
