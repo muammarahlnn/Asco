@@ -1,4 +1,4 @@
-package com.muammarahlnn.asco.feature.adminclassmeeting.component
+package com.muammarahlnn.feature.adminclassmeeting.practicums.component
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
@@ -32,7 +32,7 @@ import com.muammarahlnn.asco.core.designsystem.theme.LighterPurple
 import com.muammarahlnn.asco.core.designsystem.theme.PureWhite
 import com.muammarahlnn.asco.core.designsystem.theme.Purple
 import com.muammarahlnn.asco.core.ui.component.BaseCard
-import com.muammarahlnn.asco.feature.adminclassmeeting.R
+import com.muammarahlnn.asco.feature.adminclassmeeting.practicums.R
 
 /**
  * @Author Muammar Ahlan Abimanyu

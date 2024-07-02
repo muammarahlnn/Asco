@@ -4,10 +4,9 @@ plugins {
 }
 
 android {
-    namespace = "com.muammarahlnn.asco.feature.adminclassmeeting"
+    namespace = "com.muammarahlnn.asco.feature.adminclassmeeting.practicums"
 }
 
 dependencies {
-    implementation(project(":feature:adminclassmeeting:practicums"))
     implementation(libs.androidx.activity.compose)
 }
