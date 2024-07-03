@@ -17,8 +17,16 @@ fun NavController.navigateToClassDetails() {
     this.navigate(ClassDetails)
 }
 
-fun NavGraphBuilder.classDetailsScreen() {
+fun NavGraphBuilder.classDetailsScreen(
+    onBackClick: () -> Unit,
+    onAddParticipantsClick: () -> Unit,
+    onDeleteParticipantClick: () -> Unit,
+) {
     composable<ClassDetails> {
-        ClassDetailsRoute()
+        ClassDetailsRoute(
+            onBackClick = onBackClick,
+            onAddParticipantsClick = onAddParticipantsClick,
+            onDeleteParticipantClick = onDeleteParticipantClick,
+        )
     }
 }

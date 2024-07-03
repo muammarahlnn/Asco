@@ -1,13 +1,27 @@
 package com.muammarahlnn.asco.feature.adminclassmeeting.classdetails
 
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
+import androidx.compose.runtime.getValue
+import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 
 /**
  * @Author Muammar Ahlan Abimanyu
  * @File ClassDetailsRoute, 04/07/2024 00.07
  */
 @Composable
-internal fun ClassDetailsRoute() {
-    ClassDetailsScreen()
+internal fun ClassDetailsRoute(
+    onBackClick: () -> Unit,
+    onAddParticipantsClick: () -> Unit,
+    onDeleteParticipantClick: () -> Unit,
+    viewModel: ClassDetailsViewModel = hiltViewModel(),
+) {
+    val state by viewModel.state.collectAsStateWithLifecycle()
+
+    ClassDetailsScreen(
+        state = state,
+        onBackClick = onBackClick,
+        onAddParticipantsClick = onAddParticipantsClick,
+        onDeleteParticipantClick = onDeleteParticipantClick,
+    )
 }

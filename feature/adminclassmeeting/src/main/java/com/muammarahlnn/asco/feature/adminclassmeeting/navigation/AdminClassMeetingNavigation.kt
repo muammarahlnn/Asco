@@ -28,6 +28,10 @@ fun NavGraphBuilder.adminClassMeetingScreen(
             onBackClick = navController::navigateUp,
             onClassClick = navController::navigateToClassDetails,
         )
-        classDetailsScreen()
+        classDetailsScreen(
+            onBackClick = navController::navigateUp,
+            onAddParticipantsClick = {},
+            onDeleteParticipantClick = {},
+        )
     }
 }
