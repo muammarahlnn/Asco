@@ -4,6 +4,8 @@ import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.navigation
 import com.muammarahlnn.asco.core.navigation.AscoDestination
+import com.muammarahlnn.asco.feature.adminclassmeeting.classdetails.navigation.classDetailsScreen
+import com.muammarahlnn.asco.feature.adminclassmeeting.classdetails.navigation.navigateToClassDetails
 import com.muammarahlnn.asco.feature.adminclassmeeting.classes.navigation.classesScreen
 import com.muammarahlnn.asco.feature.adminclassmeeting.classes.navigation.navigateToClasses
 import com.muammarahlnn.feature.adminclassmeeting.practicums.navigation.Practicums
@@ -24,7 +26,8 @@ fun NavGraphBuilder.adminClassMeetingScreen(
         )
         classesScreen(
             onBackClick = navController::navigateUp,
-            onClassClick = {},
+            onClassClick = navController::navigateToClassDetails,
         )
+        classDetailsScreen()
     }
 }
