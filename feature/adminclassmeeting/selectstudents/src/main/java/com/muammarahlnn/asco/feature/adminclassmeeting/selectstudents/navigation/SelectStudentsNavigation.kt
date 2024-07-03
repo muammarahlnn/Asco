@@ -17,8 +17,12 @@ fun NavController.navigateToSelectStudents() {
     this.navigate(SelectStudents)
 }
 
-fun NavGraphBuilder.selectStudentsScreen() {
+fun NavGraphBuilder.selectStudentsScreen(
+    onCloseClick: () -> Unit,
+) {
     composable<SelectStudents> {
-        SelectStudentsRoute()
+        SelectStudentsRoute(
+            onCloseClick = onCloseClick,
+        )
     }
 }

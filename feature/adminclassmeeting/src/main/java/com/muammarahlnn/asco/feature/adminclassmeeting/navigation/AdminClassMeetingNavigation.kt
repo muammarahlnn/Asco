@@ -35,6 +35,8 @@ fun NavGraphBuilder.adminClassMeetingScreen(
             onAddStudentsClick = navController::navigateToSelectStudents,
             onDeleteStudentClick = {},
         )
-        selectStudentsScreen()
+        selectStudentsScreen(
+            onCloseClick = navController::navigateUp,
+        )
     }
 }
