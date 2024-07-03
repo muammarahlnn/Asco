@@ -34,6 +34,7 @@
             <option value="$PROJECT_DIR$/feature/adminclassmeeting/classdetails" />
             <option value="$PROJECT_DIR$/feature/adminclassmeeting/classes" />
             <option value="$PROJECT_DIR$/feature/adminclassmeeting/practicums" />
+            <option value="$PROJECT_DIR$/feature/adminclassmeeting/selectstudents" />
             <option value="$PROJECT_DIR$/feature/adminhome" />
             <option value="$PROJECT_DIR$/feature/adminpracticum" />
             <option value="$PROJECT_DIR$/feature/adminpracticumcreate" />
