@@ -8,6 +8,8 @@ import com.muammarahlnn.asco.feature.adminclassmeeting.classdetails.navigation.c
 import com.muammarahlnn.asco.feature.adminclassmeeting.classdetails.navigation.navigateToClassDetails
 import com.muammarahlnn.asco.feature.adminclassmeeting.classes.navigation.classesScreen
 import com.muammarahlnn.asco.feature.adminclassmeeting.classes.navigation.navigateToClasses
+import com.muammarahlnn.asco.feature.adminclassmeeting.selectstudents.navigation.navigateToSelectStudents
+import com.muammarahlnn.asco.feature.adminclassmeeting.selectstudents.navigation.selectStudentsScreen
 import com.muammarahlnn.feature.adminclassmeeting.practicums.navigation.Practicums
 import com.muammarahlnn.feature.adminclassmeeting.practicums.navigation.practicumsScreen
 
@@ -30,8 +32,9 @@ fun NavGraphBuilder.adminClassMeetingScreen(
         )
         classDetailsScreen(
             onBackClick = navController::navigateUp,
-            onAddParticipantsClick = {},
-            onDeleteParticipantClick = {},
+            onAddStudentsClick = navController::navigateToSelectStudents,
+            onDeleteStudentClick = {},
         )
+        selectStudentsScreen()
     }
 }

@@ -12,8 +12,8 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 @Composable
 internal fun ClassDetailsRoute(
     onBackClick: () -> Unit,
-    onAddParticipantsClick: () -> Unit,
-    onDeleteParticipantClick: () -> Unit,
+    onAddStudentsClick: () -> Unit,
+    onDeleteStudentClick: () -> Unit,
     viewModel: ClassDetailsViewModel = hiltViewModel(),
 ) {
     val state by viewModel.state.collectAsStateWithLifecycle()
@@ -21,7 +21,7 @@ internal fun ClassDetailsRoute(
     ClassDetailsScreen(
         state = state,
         onBackClick = onBackClick,
-        onAddParticipantsClick = onAddParticipantsClick,
-        onDeleteParticipantClick = onDeleteParticipantClick,
+        onAddStudentsClick = onAddStudentsClick,
+        onDeleteStudentClick = onDeleteStudentClick,
     )
 }

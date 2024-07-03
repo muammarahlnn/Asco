@@ -28,8 +28,8 @@ import com.muammarahlnn.asco.feature.adminclassmeeting.classdetails.R
  * @File ParticipantSeparator, 04/07/2024 02.02
  */
 @Composable
-internal fun ParticipantSeparator(
-    onAddParticipantsClick: () -> Unit,
+internal fun StudentsSeparator(
+    onAddStudentsClick: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
     Row(
@@ -37,7 +37,7 @@ internal fun ParticipantSeparator(
         modifier = modifier,
     ) {
         Text(
-            text = stringResource(id = R.string.participants),
+            text = stringResource(id = R.string.students),
             style = MaterialTheme.typography.bodyMedium,
             color = DarkerPurple,
         )
@@ -58,7 +58,7 @@ internal fun ParticipantSeparator(
             tint = Purple,
             modifier = Modifier
                 .size(32.dp)
-                .clickable { onAddParticipantsClick() }
+                .clickable { onAddStudentsClick() }
         )
     }
 }
@@ -67,6 +67,6 @@ internal fun ParticipantSeparator(
 @Composable
 private fun ParticipantSeparatorPreview() {
     AscoTheme {
-        ParticipantSeparator(onAddParticipantsClick = {})
+        StudentsSeparator(onAddStudentsClick = {})
     }
 }

@@ -29,7 +29,7 @@ import com.muammarahlnn.asco.core.ui.component.CircleDeleteButton
  * @File ParticipantCard, 04/07/2024 00.32
  */
 @Composable
-internal fun ParticipantCard(
+internal fun StudentCard(
     studentId: String,
     studentName: String,
     onDeleteClick: () -> Unit,
@@ -79,9 +79,9 @@ internal fun ParticipantCard(
 
 @Preview
 @Composable
-private fun ParticipantCardPreview() {
+private fun StudentCardPreview() {
     AscoTheme {
-        ParticipantCard(
+        StudentCard(
             studentId = "H071191032",
             studentName = "Muammar Ahlan Abimanyu",
             onDeleteClick = {},

@@ -19,14 +19,14 @@ fun NavController.navigateToClassDetails() {
 
 fun NavGraphBuilder.classDetailsScreen(
     onBackClick: () -> Unit,
-    onAddParticipantsClick: () -> Unit,
-    onDeleteParticipantClick: () -> Unit,
+    onAddStudentsClick: () -> Unit,
+    onDeleteStudentClick: () -> Unit,
 ) {
     composable<ClassDetails> {
         ClassDetailsRoute(
             onBackClick = onBackClick,
-            onAddParticipantsClick = onAddParticipantsClick,
-            onDeleteParticipantClick = onDeleteParticipantClick,
+            onAddStudentsClick = onAddStudentsClick,
+            onDeleteStudentClick = onDeleteStudentClick,
         )
     }
 }

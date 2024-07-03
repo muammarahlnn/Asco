@@ -11,8 +11,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.muammarahlnn.asco.feature.adminclassmeeting.classdetails.component.ClassDetailsHeaderCard
 import com.muammarahlnn.asco.feature.adminclassmeeting.classdetails.component.ClassDetailsTopAppBar
-import com.muammarahlnn.asco.feature.adminclassmeeting.classdetails.component.ParticipantCard
-import com.muammarahlnn.asco.feature.adminclassmeeting.classdetails.component.ParticipantSeparator
+import com.muammarahlnn.asco.feature.adminclassmeeting.classdetails.component.StudentCard
+import com.muammarahlnn.asco.feature.adminclassmeeting.classdetails.component.StudentsSeparator
 
 /**
  * @Author Muammar Ahlan Abimanyu
@@ -21,8 +21,8 @@ import com.muammarahlnn.asco.feature.adminclassmeeting.classdetails.component.Pa
 @Composable
 internal fun ClassDetailsScreen(
     onBackClick: () -> Unit,
-    onAddParticipantsClick: () -> Unit,
-    onDeleteParticipantClick: () -> Unit,
+    onAddStudentsClick: () -> Unit,
+    onDeleteStudentClick: () -> Unit,
     state: ClassDetailsState = ClassDetailsState(),
 ) {
     Scaffold(
@@ -50,16 +50,16 @@ internal fun ClassDetailsScreen(
             item { Spacer(modifier = Modifier.height(16.dp)) }
 
             item {
-                ParticipantSeparator(onAddParticipantsClick = onAddParticipantsClick)
+                StudentsSeparator(onAddStudentsClick = onAddStudentsClick)
             }
 
             item { Spacer(modifier = Modifier.height(16.dp)) }
 
             items(10) {
-                ParticipantCard(
+                StudentCard(
                     studentId = "H071191032",
                     studentName = "Muammar Ahlan Abimanyu",
-                    onDeleteClick = { onDeleteParticipantClick() },
+                    onDeleteClick = { onDeleteStudentClick() },
                     modifier = Modifier.padding(bottom = 8.dp)
                 )
             }
