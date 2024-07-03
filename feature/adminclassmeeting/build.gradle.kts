@@ -9,5 +9,6 @@ android {
 
 dependencies {
     implementation(project(":feature:adminclassmeeting:practicums"))
+    implementation(project(":feature:adminclassmeeting:classes"))
     implementation(libs.androidx.activity.compose)
 }
