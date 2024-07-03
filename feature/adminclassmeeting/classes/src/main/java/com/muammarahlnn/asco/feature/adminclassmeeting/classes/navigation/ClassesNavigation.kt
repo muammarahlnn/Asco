@@ -17,8 +17,14 @@ fun NavController.navigateToClasses() {
     this.navigate(Classes)
 }
 
-fun NavGraphBuilder.classesScreen() {
+fun NavGraphBuilder.classesScreen(
+    onBackClick: () -> Unit,
+    onClassClick: () -> Unit,
+) {
     composable<Classes> {
-        ClassesRoute()
+        ClassesRoute(
+            onBackClick = onBackClick,
+            onClassClick = onClassClick,
+        )
     }
 }
