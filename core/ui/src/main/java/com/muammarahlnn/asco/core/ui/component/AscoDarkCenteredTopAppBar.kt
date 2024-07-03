@@ -9,6 +9,7 @@ import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.material3.TopAppBarScrollBehavior
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import com.muammarahlnn.asco.core.designsystem.theme.AscoTheme
 import com.muammarahlnn.asco.core.designsystem.theme.DarkerPurple
@@ -33,6 +34,8 @@ fun AscoDarkCenteredTopAppBar(
                 text = title,
                 style = MaterialTheme.typography.titleMedium,
                 color = PureWhite,
+                maxLines = 1,
+                overflow = TextOverflow.Ellipsis,
             )
         },
         navigationIcon = navigationIcon,
