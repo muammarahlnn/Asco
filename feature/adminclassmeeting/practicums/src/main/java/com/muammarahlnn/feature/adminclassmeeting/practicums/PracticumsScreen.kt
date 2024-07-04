@@ -9,7 +9,9 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.muammarahlnn.asco.core.designsystem.theme.AscoTheme
 import com.muammarahlnn.asco.feature.adminclassmeeting.practicums.R
 import com.muammarahlnn.feature.adminclassmeeting.practicums.component.PracticumClassMeetingCard
 import com.muammarahlnn.feature.adminclassmeeting.practicums.component.PracticumClassMeetingTopAppBar
@@ -21,15 +23,13 @@ import com.muammarahlnn.feature.adminclassmeeting.practicums.component.Practicum
 @Composable
 internal fun PracticumsScreen(
     state: PracticumsState = PracticumsState(),
-    onBackClick: () -> Unit,
-    onClassButtonClick: () -> Unit,
-    onMeetingButtonClick: () -> Unit,
+    actions: PracticumsActions = PracticumsActions(),
 ) {
     Scaffold(
         topBar = {
             PracticumClassMeetingTopAppBar(
                 title = stringResource(id = R.string.choose_practicum),
-                onBackClick = onBackClick,
+                onBackClick = actions.onBackClick,
             )
         },
         modifier = Modifier.fillMaxSize(),
@@ -44,10 +44,18 @@ internal fun PracticumsScreen(
                     practicumName = "Pemrograman Mobile",
                     totalClasses = 4,
                     totalMeetings = 12,
-                    onClassButtonClick = onClassButtonClick,
-                    onMeetingButtonClick = onMeetingButtonClick,
+                    onClassButtonClick = actions.onClassButtonClick,
+                    onMeetingButtonClick = actions.onMeetingButtonClick,
                 )
             }
         }
+    }
+}
+
+@Preview
+@Composable
+private fun PracticumsScreenPreview() {
+    AscoTheme {
+        PracticumsScreen()
     }
 }

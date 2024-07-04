@@ -7,3 +7,8 @@ package com.muammarahlnn.asco.feature.adminclassmeeting.classes
 internal data class ClassesState(
     val practicumName: String = "Pemrograman Mobile",
 )
+
+internal data class ClassesActions(
+    val onBackClick: () -> Unit = {},
+    val onClassClick: () -> Unit = {},
+)

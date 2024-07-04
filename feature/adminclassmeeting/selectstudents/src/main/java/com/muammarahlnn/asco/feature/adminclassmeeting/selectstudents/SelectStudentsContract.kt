@@ -8,3 +8,8 @@ internal data class SelectStudentsState(
     val className: String = "Kelas A",
     val searchQuery: String = "",
 )
+
+internal data class SelectStudentsActions(
+    val onCloseClick: () -> Unit = {},
+    val onSearchQueryChange: (String) -> Unit = {},
+)

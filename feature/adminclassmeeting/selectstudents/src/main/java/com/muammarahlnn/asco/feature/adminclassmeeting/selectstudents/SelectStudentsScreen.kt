@@ -5,6 +5,8 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
+import com.muammarahlnn.asco.core.designsystem.theme.AscoTheme
 import com.muammarahlnn.asco.core.ui.component.SelectMembersScreen
 import com.muammarahlnn.asco.feature.adminclassmeeting.selectstudents.component.SelectStudentsTopAppBar
 
@@ -14,25 +16,32 @@ import com.muammarahlnn.asco.feature.adminclassmeeting.selectstudents.component.
  */
 @Composable
 internal fun SelectStudentsScreen(
-    onCloseClick: () -> Unit,
-    onSearchQueryChange: (String) -> Unit,
     state: SelectStudentsState = SelectStudentsState(),
+    actions: SelectStudentsActions = SelectStudentsActions(),
 ) {
     Scaffold(
         topBar = {
             SelectStudentsTopAppBar(
                 title = state.className,
-                onCloseClick = onCloseClick,
+                onCloseClick = actions.onCloseClick,
                 onDoneClick = {}
             )
         },
     ) { paddingValues ->
         SelectMembersScreen(
             searchQuery = state.searchQuery,
-            onSearchQueryChange = onSearchQueryChange,
+            onSearchQueryChange = actions.onSearchQueryChange,
             modifier = Modifier
                 .fillMaxSize()
                 .padding(paddingValues)
         )
+    }
+}
+
+@Preview
+@Composable
+private fun SelectStudentsScreenPrev() {
+    AscoTheme {
+        SelectStudentsScreen()
     }
 }

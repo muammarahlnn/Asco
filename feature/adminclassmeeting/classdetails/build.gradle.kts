@@ -8,5 +8,6 @@ android {
 }
 
 dependencies {
+    implementation(project(":feature:adminclassmeeting:navigation"))
     implementation(libs.androidx.activity.compose)
 }

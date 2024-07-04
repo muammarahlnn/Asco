@@ -13,3 +13,9 @@ internal data class ClassDetailsState(
     val startTime: LocalTime = LocalTime.of(10, 0),
     val endTime: LocalTime = LocalTime.of(12, 30),
 )
+
+internal data class ClassDetailsActions(
+    val onBackClick: () -> Unit = {},
+    val onAddStudentsClick: () -> Unit = {},
+    val onDeleteStudentClick: () -> Unit = {},
+)

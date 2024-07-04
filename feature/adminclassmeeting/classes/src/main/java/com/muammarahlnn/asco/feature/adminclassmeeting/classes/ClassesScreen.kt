@@ -21,15 +21,14 @@ import java.time.LocalTime
  */
 @Composable
 internal fun ClassesScreen(
-    onBackClick: () -> Unit,
-    onClassClick: () -> Unit,
     state: ClassesState = ClassesState(),
+    actions: ClassesActions = ClassesActions(),
 ) {
     Scaffold(
         topBar = {
             ClassesTopAppBar(
                 title = state.practicumName,
-                onBackClick = onBackClick,
+                onBackClick = actions.onBackClick,
             )
         }
     ) { paddingValues ->
@@ -47,7 +46,7 @@ internal fun ClassesScreen(
                     day = "Sabtu",
                     startTime = LocalTime.of(8, 0),
                     endTime = LocalTime.of(10, 30),
-                    onClick = onClassClick,
+                    onClick = actions.onClassClick,
                 )
             }
         }
@@ -60,8 +59,6 @@ private fun ClassesScreenPreview() {
     AscoTheme {
         ClassesScreen(
             state = ClassesState(practicumName = "Pemrograman Mobile"),
-            onBackClick = {},
-            onClassClick = {},
         )
     }
 }

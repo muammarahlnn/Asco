@@ -8,7 +8,9 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.muammarahlnn.asco.core.designsystem.theme.AscoTheme
 import com.muammarahlnn.asco.feature.adminclassmeeting.classdetails.component.ClassDetailsHeaderCard
 import com.muammarahlnn.asco.feature.adminclassmeeting.classdetails.component.ClassDetailsTopAppBar
 import com.muammarahlnn.asco.feature.adminclassmeeting.classdetails.component.StudentCard
@@ -20,16 +22,14 @@ import com.muammarahlnn.asco.feature.adminclassmeeting.classdetails.component.St
  */
 @Composable
 internal fun ClassDetailsScreen(
-    onBackClick: () -> Unit,
-    onAddStudentsClick: () -> Unit,
-    onDeleteStudentClick: () -> Unit,
     state: ClassDetailsState = ClassDetailsState(),
+    actions: ClassDetailsActions = ClassDetailsActions(),
 ) {
     Scaffold(
         topBar = {
             ClassDetailsTopAppBar(
                 title = state.className,
-                onBackClick = onBackClick,
+                onBackClick = actions.onBackClick,
             )
         }
     ) { paddingValues ->
@@ -50,7 +50,7 @@ internal fun ClassDetailsScreen(
             item { Spacer(modifier = Modifier.height(16.dp)) }
 
             item {
-                StudentsSeparator(onAddStudentsClick = onAddStudentsClick)
+                StudentsSeparator(onAddStudentsClick = actions.onAddStudentsClick)
             }
 
             item { Spacer(modifier = Modifier.height(16.dp)) }
@@ -59,10 +59,18 @@ internal fun ClassDetailsScreen(
                 StudentCard(
                     studentId = "H071191032",
                     studentName = "Muammar Ahlan Abimanyu",
-                    onDeleteClick = { onDeleteStudentClick() },
+                    onDeleteClick = { actions.onDeleteStudentClick() },
                     modifier = Modifier.padding(bottom = 8.dp)
                 )
             }
         }
+    }
+}
+
+@Preview
+@Composable
+private fun ClassDetailsScreenPreview() {
+    AscoTheme {
+        ClassDetailsScreen()
     }
 }

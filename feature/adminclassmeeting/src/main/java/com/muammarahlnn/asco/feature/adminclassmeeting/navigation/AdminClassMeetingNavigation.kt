@@ -5,12 +5,8 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.navigation
 import com.muammarahlnn.asco.core.navigation.AscoDestination
 import com.muammarahlnn.asco.feature.adminclassmeeting.classdetails.navigation.classDetailsScreen
-import com.muammarahlnn.asco.feature.adminclassmeeting.classdetails.navigation.navigateToClassDetails
 import com.muammarahlnn.asco.feature.adminclassmeeting.classes.navigation.classesScreen
-import com.muammarahlnn.asco.feature.adminclassmeeting.classes.navigation.navigateToClasses
-import com.muammarahlnn.asco.feature.adminclassmeeting.selectstudents.navigation.navigateToSelectStudents
 import com.muammarahlnn.asco.feature.adminclassmeeting.selectstudents.navigation.selectStudentsScreen
-import com.muammarahlnn.feature.adminclassmeeting.practicums.navigation.Practicums
 import com.muammarahlnn.feature.adminclassmeeting.practicums.navigation.practicumsScreen
 
 /**
@@ -20,23 +16,12 @@ import com.muammarahlnn.feature.adminclassmeeting.practicums.navigation.practicu
 fun NavGraphBuilder.adminClassMeetingScreen(
     navController: NavController,
 ) {
-    navigation<AscoDestination.AdminClassMeeting>(startDestination = Practicums) {
-        practicumsScreen(
-            onBackClick = navController::navigateUp,
-            onClassButtonClick = navController::navigateToClasses,
-            onMeetingButtonClick = {},
-        )
-        classesScreen(
-            onBackClick = navController::navigateUp,
-            onClassClick = navController::navigateToClassDetails,
-        )
-        classDetailsScreen(
-            onBackClick = navController::navigateUp,
-            onAddStudentsClick = navController::navigateToSelectStudents,
-            onDeleteStudentClick = {},
-        )
-        selectStudentsScreen(
-            onCloseClick = navController::navigateUp,
-        )
+    navigation<AscoDestination.AdminClassMeeting>(
+        startDestination = AdminClassMeetingDestination.Practicums
+    ) {
+        practicumsScreen(navController)
+        classesScreen(navController)
+        classDetailsScreen(navController)
+        selectStudentsScreen(navController)
     }
 }
