@@ -26,4 +26,5 @@ internal data class MeetingsActions(
     val onSortClick: () -> Unit = {},
     val onMeetingClick: () -> Unit = {},
     val onDeleteMeetingClick: () -> Unit = {},
+    val onFabAddClick: () -> Unit = {},
 )
