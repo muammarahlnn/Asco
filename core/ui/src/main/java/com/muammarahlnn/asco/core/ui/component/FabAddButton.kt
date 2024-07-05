@@ -1,4 +1,4 @@
-package com.muammarahlnn.asco.feature.adminpracticum.component
+package com.muammarahlnn.asco.core.ui.component
 
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.size
@@ -18,10 +18,10 @@ import com.muammarahlnn.asco.core.designsystem.theme.PureWhite
 
 /**
  * @Author Muammar Ahlan Abimanyu
- * @File FabAddButton, 20/06/2024 22.00
+ * @File FabAddButton, 05/07/2024 18.18
  */
 @Composable
-internal fun FabAddButton(
+fun FabAddButton(
     onClick: () -> Unit,
     modifier: Modifier = Modifier,
 ) {

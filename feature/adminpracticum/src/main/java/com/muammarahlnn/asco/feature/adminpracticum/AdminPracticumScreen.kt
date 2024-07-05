@@ -12,8 +12,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.muammarahlnn.asco.core.designsystem.theme.AscoTheme
+import com.muammarahlnn.asco.core.ui.component.FabAddButton
 import com.muammarahlnn.asco.feature.adminpracticum.component.AdminPracticumTopAppBar
-import com.muammarahlnn.asco.feature.adminpracticum.component.FabAddButton
 import com.muammarahlnn.asco.feature.adminpracticum.component.PracticumCard
 
 /**
@@ -32,9 +32,7 @@ internal fun AdminPracticumScreen(
             )
         },
         floatingActionButton = {
-            FabAddButton(
-                onClick = actions.onFabAddButtonClick,
-            )
+            FabAddButton(onClick = actions.onFabAddButtonClick)
         },
         floatingActionButtonPosition = FabPosition.End,
         modifier = Modifier.fillMaxSize()
