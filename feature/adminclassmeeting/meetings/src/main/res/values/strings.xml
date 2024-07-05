@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="search_placeholder">Cari pertemuan</string>
+    <string name="meeting_number">#%1$s</string>
+</resources>

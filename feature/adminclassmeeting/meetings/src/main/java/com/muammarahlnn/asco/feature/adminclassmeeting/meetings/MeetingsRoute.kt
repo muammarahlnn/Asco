@@ -1,4 +1,4 @@
-package com.muammarahlnn.feature.adminclassmeeting.practicums
+package com.muammarahlnn.asco.feature.adminclassmeeting.meetings
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -9,33 +9,35 @@ import androidx.navigation.NavController
 
 /**
  * @Author Muammar Ahlan Abimanyu
- * @File PracticumsRoute, 02/07/2024 21.54
+ * @File MeetingsRoute, 04/07/2024 22.12
  */
 @Composable
-internal fun PracticumsRoute(
+internal fun MeetingsRoute(
     navController: NavController,
-    viewModel: PracticumsViewModel = hiltViewModel(),
-    coordinator: PracticumsCoordinator = rememberPracticumsCoordinator(
+    viewModel: MeetingsViewModel = hiltViewModel(),
+    coordinator: MeetingsCoordinator = rememberMeetingsCoordinator(
         navController = navController,
         viewModel = viewModel,
     ),
 ) {
     val state by coordinator.state.collectAsStateWithLifecycle()
-    val actions = rememberPracticumsActions(coordinator = coordinator)
+    val actions = rememberMeetingsActions(coordinator = coordinator)
 
-    PracticumsScreen(
+    MeetingsScreen(
         state = state,
         actions = actions,
     )
 }
 
 @Composable
-private fun rememberPracticumsActions(coordinator: PracticumsCoordinator): PracticumsActions {
+private fun rememberMeetingsActions(coordinator: MeetingsCoordinator): MeetingsActions {
     return remember(coordinator) {
-        PracticumsActions(
+        MeetingsActions(
             onBackClick = coordinator::navigateBack,
-            onClassButtonClick = coordinator::navigateToClasses,
-            onMeetingButtonClick = coordinator::navigateToMeetings,
+            onSearchQueryChange = coordinator.viewModel::onSearchQueryChange,
+            onSortClick = coordinator.viewModel::onSortClick,
+            onMeetingClick = {},
+            onDeleteMeetingClick = {},
         )
     }
 }

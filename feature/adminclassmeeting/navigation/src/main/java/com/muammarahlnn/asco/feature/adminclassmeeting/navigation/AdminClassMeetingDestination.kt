@@ -19,4 +19,7 @@ sealed interface AdminClassMeetingDestination {
 
     @Serializable
     data object SelectStudents : AdminClassMeetingDestination
+
+    @Serializable
+    data object Meetings : AdminClassMeetingDestination
 }
