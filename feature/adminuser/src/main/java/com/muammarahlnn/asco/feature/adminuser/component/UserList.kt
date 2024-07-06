@@ -2,7 +2,6 @@ package com.muammarahlnn.asco.feature.adminuser.component
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -15,11 +14,9 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.rounded.HorizontalRule
 import androidx.compose.material.icons.rounded.Person
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -29,9 +26,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import com.muammarahlnn.asco.core.designsystem.theme.DarkPink
 import com.muammarahlnn.asco.core.designsystem.theme.DarkerPurple
-import com.muammarahlnn.asco.core.designsystem.theme.Pink
 import com.muammarahlnn.asco.core.designsystem.theme.PureWhite
 import com.muammarahlnn.asco.core.designsystem.theme.Purple
 import com.muammarahlnn.asco.core.ui.component.CircleDeleteButton

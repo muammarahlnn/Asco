@@ -7,7 +7,10 @@ import androidx.compose.runtime.remember
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavController
-import com.muammarahlnn.asco.feature.adminpracticumcreate.CurrentPage.*
+import com.muammarahlnn.asco.feature.adminpracticumcreate.CurrentPage.CREATE_BADGE
+import com.muammarahlnn.asco.feature.adminpracticumcreate.CurrentPage.FIRST
+import com.muammarahlnn.asco.feature.adminpracticumcreate.CurrentPage.SECOND
+import com.muammarahlnn.asco.feature.adminpracticumcreate.CurrentPage.SELECT_ASSISTANT
 
 /**
  * @Author Muammar Ahlan Abimanyu

@@ -1,6 +1,5 @@
 package com.muammarahlnn.asco.feature.adminpracticumdetails.component
 
-import android.graphics.Paint.Align
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row

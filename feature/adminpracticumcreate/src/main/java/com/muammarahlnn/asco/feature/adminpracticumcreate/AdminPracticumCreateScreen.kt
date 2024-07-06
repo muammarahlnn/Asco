@@ -16,10 +16,10 @@ import com.muammarahlnn.asco.feature.adminpracticumcreate.CurrentPage.SECOND
 import com.muammarahlnn.asco.feature.adminpracticumcreate.CurrentPage.SELECT_ASSISTANT
 import com.muammarahlnn.asco.feature.adminpracticumcreate.component.AdminPracticumCreateTopAppBar
 import com.muammarahlnn.asco.feature.adminpracticumcreate.component.CreateClassDialog
+import com.muammarahlnn.asco.feature.adminpracticumcreate.component.createbadge.CreateBadgeScreen
 import com.muammarahlnn.asco.feature.adminpracticumcreate.component.firstscreen.FirstScreen
 import com.muammarahlnn.asco.feature.adminpracticumcreate.component.secondscreen.SecondScreen
 import com.muammarahlnn.asco.feature.adminpracticumcreate.component.selectassistant.SelectAssistantScreen
-import com.muammarahlnn.asco.feature.adminpracticumcreate.component.createbadge.CreateBadgeScreen
 
 /**
  * @Author Muammar Ahlan Abimanyu

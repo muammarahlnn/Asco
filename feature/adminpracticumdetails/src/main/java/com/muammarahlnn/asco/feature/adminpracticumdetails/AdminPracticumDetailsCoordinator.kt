@@ -3,7 +3,6 @@ package com.muammarahlnn.asco.feature.adminpracticumdetails
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
-import androidx.compose.ui.Modifier
 import androidx.navigation.NavController
 import com.muammarahlnn.asco.core.navigation.AscoDestination
 import kotlinx.coroutines.CoroutineScope
