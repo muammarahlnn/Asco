@@ -1,4 +1,4 @@
-package com.muammarahlnn.asco.feature.adminclassmeeting.classdetails.component
+package com.muammarahlnn.asco.core.ui.component
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
@@ -21,7 +21,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -30,22 +29,17 @@ import com.muammarahlnn.asco.core.designsystem.theme.DarkerPurple
 import com.muammarahlnn.asco.core.designsystem.theme.Gray
 import com.muammarahlnn.asco.core.designsystem.theme.PureWhite
 import com.muammarahlnn.asco.core.designsystem.theme.Purple
-import com.muammarahlnn.asco.core.ui.ext.toFormattedTime
-import com.muammarahlnn.asco.feature.adminclassmeeting.classdetails.R
-import java.time.LocalTime
-import com.muammarahlnn.asco.core.ui.R as uiR
+import com.muammarahlnn.asco.core.ui.R
 
 /**
  * @Author Muammar Ahlan Abimanyu
- * @File ClassDetailsHeaderCard, 04/07/2024 00.18
+ * @File PracticumResourceHeaderCard, 06/07/2024 22.51
  */
 @Composable
-internal fun ClassDetailsHeaderCard(
-    className: String,
-    practicumName: String,
-    day: String,
-    startTime: LocalTime,
-    endTime: LocalTime,
+fun PracticumResourceHeaderCard(
+    title: String,
+    subtitle: String,
+    text: String,
     modifier: Modifier = Modifier,
 ) {
     Card(
@@ -72,7 +66,7 @@ internal fun ClassDetailsHeaderCard(
                 Spacer(modifier = Modifier.width(48.dp))
 
                 Image(
-                    painter = painterResource(id = uiR.drawable.gray_bricks),
+                    painter = painterResource(id = R.drawable.gray_bricks),
                     contentDescription = null,
                     contentScale = ContentScale.FillBounds,
                     modifier = Modifier
@@ -85,24 +79,19 @@ internal fun ClassDetailsHeaderCard(
                 modifier = Modifier.padding(16.dp)
             ) {
                 Text(
-                    text = practicumName,
+                    text = title,
                     style = MaterialTheme.typography.titleLarge,
                     color = DarkerPurple,
                     maxLines = 1,
                     overflow = TextOverflow.Ellipsis,
                 )
                 Text(
-                    text = className,
+                    text = subtitle,
                     style = MaterialTheme.typography.titleMedium,
                     color = Purple,
                 )
                 Text(
-                    text = stringResource(
-                        id = R.string.class_schedule,
-                        day,
-                        startTime.toFormattedTime(),
-                        endTime.toFormattedTime(),
-                    ),
+                    text = text,
                     style = MaterialTheme.typography.bodyMedium,
                     color = Gray,
                 )
@@ -113,14 +102,12 @@ internal fun ClassDetailsHeaderCard(
 
 @Preview
 @Composable
-private fun ClassDetailsHeaderCardPreview() {
+private fun PracticumResourceHeaderCardPreview() {
     AscoTheme {
-        ClassDetailsHeaderCard(
-            className = "Kelas A",
-            practicumName = "Pemrograman Mobile",
-            day = "Sabtu",
-            startTime = LocalTime.of(10, 0),
-            endTime = LocalTime.of(12, 30),
+        PracticumResourceHeaderCard(
+            title = "Kelas A",
+            subtitle = "Pemrograman Mobile",
+            text = "Setiap Sabtu 07:30 - 10:00",
         )
     }
 }

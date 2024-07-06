@@ -8,10 +8,12 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.muammarahlnn.asco.core.designsystem.theme.AscoTheme
-import com.muammarahlnn.asco.feature.adminclassmeeting.classdetails.component.ClassDetailsHeaderCard
+import com.muammarahlnn.asco.core.ui.component.PracticumResourceHeaderCard
+import com.muammarahlnn.asco.core.ui.ext.toFormattedTime
 import com.muammarahlnn.asco.feature.adminclassmeeting.classdetails.component.ClassDetailsTopAppBar
 import com.muammarahlnn.asco.feature.adminclassmeeting.classdetails.component.StudentCard
 import com.muammarahlnn.asco.feature.adminclassmeeting.classdetails.component.StudentsSeparator
@@ -38,12 +40,15 @@ internal fun ClassDetailsScreen(
             modifier = Modifier.padding(paddingValues)
         ) {
             item {
-                ClassDetailsHeaderCard(
-                    className = state.className,
-                    practicumName = state.practicumName,
-                    day = state.day,
-                    startTime = state.startTime,
-                    endTime = state.endTime,
+                PracticumResourceHeaderCard(
+                    title = state.className,
+                    subtitle = state.practicumName,
+                    text = stringResource(
+                        id = R.string.class_schedule,
+                        state.day,
+                        state.startTime.toFormattedTime(),
+                        state.endTime.toFormattedTime(),
+                    )
                 )
             }
 
