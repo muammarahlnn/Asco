@@ -36,7 +36,7 @@ private fun rememberMeetingsActions(coordinator: MeetingsCoordinator): MeetingsA
             onBackClick = coordinator::navigateBack,
             onSearchQueryChange = coordinator.viewModel::onSearchQueryChange,
             onSortClick = coordinator.viewModel::onSortClick,
-            onMeetingClick = {},
+            onMeetingClick = coordinator::navigateToMeetingDetails,
             onDeleteMeetingClick = {},
         )
     }
