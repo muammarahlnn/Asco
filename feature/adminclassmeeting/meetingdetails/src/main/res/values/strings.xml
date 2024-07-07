@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="meeting_number">Pertemuan %1$s</string>
+    <string name="module">Modul</string>
+    <string name="open_module">Buka Modul</string>
+    <string name="speaker_and_co_speaker">Pemateri &amp; Pendamping</string>
+    <string name="speaker">Pemateri</string>
+    <string name="co_speaker">Pendamping</string>
+</resources>
