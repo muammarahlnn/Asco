@@ -35,7 +35,7 @@ private fun rememberMeetingDetailsActions(coordinator: MeetingDetailsCoordinator
     return remember(coordinator) {
         MeetingDetailsActions(
             onBackClick = coordinator::navigateBack,
-            onEditClick = {},
+            onEditClick = coordinator::navigateToMeetingCreate,
             onOpenModuleClick = {},
         )
     }

@@ -6,6 +6,7 @@ import androidx.navigation.compose.navigation
 import com.muammarahlnn.asco.core.navigation.AscoDestination
 import com.muammarahlnn.asco.feature.adminclassmeeting.classdetails.navigation.classDetailsScreen
 import com.muammarahlnn.asco.feature.adminclassmeeting.classes.navigation.classesScreen
+import com.muammarahlnn.asco.feature.adminclassmeeting.meetingcreate.navigation.meetingCreateScreen
 import com.muammarahlnn.asco.feature.adminclassmeeting.meetingdetails.navigation.meetingDetailsScreen
 import com.muammarahlnn.asco.feature.adminclassmeeting.meetings.navigation.meetingsScreen
 import com.muammarahlnn.asco.feature.adminclassmeeting.selectstudents.navigation.selectStudentsScreen
@@ -27,5 +28,6 @@ fun NavGraphBuilder.adminClassMeetingScreen(
         selectStudentsScreen(navController)
         meetingsScreen(navController)
         meetingDetailsScreen(navController)
+        meetingCreateScreen(navController)
     }
 }

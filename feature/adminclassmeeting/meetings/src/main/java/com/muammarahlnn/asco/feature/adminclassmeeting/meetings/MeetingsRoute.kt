@@ -38,6 +38,7 @@ private fun rememberMeetingsActions(coordinator: MeetingsCoordinator): MeetingsA
             onSortClick = coordinator.viewModel::onSortClick,
             onMeetingClick = coordinator::navigateToMeetingDetails,
             onDeleteMeetingClick = {},
+            onFabAddClick = coordinator::navigateToMeetingCreate,
         )
     }
 }

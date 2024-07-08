@@ -40,4 +40,8 @@ internal class MeetingsCoordinator(
     fun navigateToMeetingDetails() {
         navController.navigate(AdminClassMeetingDestination.MeetingDetails)
     }
+
+    fun navigateToMeetingCreate() {
+        navController.navigate(AdminClassMeetingDestination.MeetingCreate)
+    }
 }

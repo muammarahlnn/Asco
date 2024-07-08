@@ -4,6 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.navigation.NavController
+import com.muammarahlnn.asco.feature.adminclassmeeting.navigation.AdminClassMeetingDestination
 import kotlinx.coroutines.CoroutineScope
 
 /**
@@ -34,5 +35,9 @@ internal class MeetingDetailsCoordinator(
 
     fun navigateBack() {
         navController.navigateUp()
+    }
+
+    fun navigateToMeetingCreate() {
+        navController.navigate(AdminClassMeetingDestination.MeetingCreate)
     }
 }
