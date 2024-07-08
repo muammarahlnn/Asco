@@ -12,8 +12,10 @@ import java.util.Locale
 fun LocalTime.toFormattedTime(): String =
     String.format(Locale.getDefault(), "%02d:%02d", hour, minute)
 
-fun LocalDate.toFormattedDate(): String {
+fun LocalDate.toFormattedDate(
+    dateFormat: String = "d MMMM yyyy",
+): String {
     val indonesianLocale = Locale("id", "ID")
-    val formatter = DateTimeFormatter.ofPattern("d MMMM yyyy", indonesianLocale)
+    val formatter = DateTimeFormatter.ofPattern(dateFormat, indonesianLocale)
     return this.format(formatter)
 }
