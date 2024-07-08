@@ -1,10 +1,14 @@
 package com.muammarahlnn.asco.feature.adminclassmeeting.classdetails
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.rounded.Group
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -48,7 +52,16 @@ internal fun ClassDetailsScreen(
                         state.day,
                         state.startTime.toFormattedTime(),
                         state.endTime.toFormattedTime(),
-                    )
+                    ),
+                    image = {
+                        Image(
+                            imageVector = Icons.Rounded.Group,
+                            contentDescription = null,
+                            modifier = Modifier
+                                .padding(vertical = 16.dp)
+                                .size(64.dp),
+                        )
+                    }
                 )
             }
 

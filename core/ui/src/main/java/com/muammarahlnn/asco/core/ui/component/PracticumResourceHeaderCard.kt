@@ -1,6 +1,7 @@
 package com.muammarahlnn.asco.core.ui.component
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.IntrinsicSize
 import androidx.compose.foundation.layout.Row
@@ -18,6 +19,7 @@ import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
@@ -40,6 +42,7 @@ fun PracticumResourceHeaderCard(
     title: String,
     subtitle: String,
     text: String,
+    image: @Composable () -> Unit,
     modifier: Modifier = Modifier,
 ) {
     Card(
@@ -55,13 +58,11 @@ fun PracticumResourceHeaderCard(
             ) {
                 Spacer(modifier = Modifier.width(16.dp))
 
-                Image(
-                    imageVector = Icons.Rounded.Group,
-                    contentDescription = null,
-                    modifier = Modifier
-                        .padding(vertical = 16.dp)
-                        .size(64.dp),
-                )
+                Box(
+                    modifier = Modifier.padding(top = 16.dp)
+                ) {
+                    image()
+                }
 
                 Spacer(modifier = Modifier.width(48.dp))
 
@@ -112,6 +113,15 @@ private fun PracticumResourceHeaderCardPreview() {
             title = "Kelas A",
             subtitle = "Pemrograman Mobile",
             text = "Setiap Sabtu 07:30 - 10:00",
+            image = {
+                Image(
+                    imageVector = Icons.Rounded.Group,
+                    contentDescription = null,
+                    modifier = Modifier
+                        .padding(vertical = 16.dp)
+                        .size(64.dp),
+                )
+            }
         )
     }
 }
