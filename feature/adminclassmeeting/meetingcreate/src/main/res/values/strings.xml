@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="add_meeting">Tambah Pertemuan</string>
+    <string name="edit_meeting">Edit Pertemuan</string>
+    <string name="meeting_number_label">No. Pertemuan (Auto-generated)</string>
+    <string name="material_name_label">Nama Materi</string>
+    <string name="meeting_date_label">Tanggal Pertemuan</string>
+    <string name="speaker_label">Pemateri</string>
+    <string name="co_speaker_label">Pendamping</string>
+    <string name="module_label">Modul</string>
+    <string name="practicum_question_label">Soal Praktikum</string>
+    <string name="show_file_text">Tampilkan</string>
+    <string name="confirm_date_dialog_text">OK</string>
+    <string name="cancel_date_dialog_text">Batal</string>
+</resources>
