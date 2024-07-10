@@ -46,6 +46,7 @@
             <option value="$PROJECT_DIR$/feature/adminuser" />
             <option value="$PROJECT_DIR$/feature/adminusercreate" />
             <option value="$PROJECT_DIR$/feature/adminuserdetails" />
+            <option value="$PROJECT_DIR$/feature/attendance" />
             <option value="$PROJECT_DIR$/feature/login" />
           </set>
         </option>
