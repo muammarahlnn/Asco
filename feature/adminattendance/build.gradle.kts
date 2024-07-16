@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.muammarahlnn.asco.feature.attendance"
+    namespace = "com.muammarahlnn.asco.feature.adminattendance"
 }
 
 dependencies {

@@ -30,6 +30,7 @@
             <option value="$PROJECT_DIR$/core/navigation" />
             <option value="$PROJECT_DIR$/core/ui" />
             <option value="$PROJECT_DIR$/feature" />
+            <option value="$PROJECT_DIR$/feature/adminattendance" />
             <option value="$PROJECT_DIR$/feature/adminclassmeeting" />
             <option value="$PROJECT_DIR$/feature/adminclassmeeting/classdetails" />
             <option value="$PROJECT_DIR$/feature/adminclassmeeting/classes" />
@@ -46,7 +47,6 @@
             <option value="$PROJECT_DIR$/feature/adminuser" />
             <option value="$PROJECT_DIR$/feature/adminusercreate" />
             <option value="$PROJECT_DIR$/feature/adminuserdetails" />
-            <option value="$PROJECT_DIR$/feature/attendance" />
             <option value="$PROJECT_DIR$/feature/login" />
           </set>
         </option>
