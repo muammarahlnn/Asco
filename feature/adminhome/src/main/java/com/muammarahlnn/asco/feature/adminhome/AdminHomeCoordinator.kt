@@ -5,6 +5,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.navigation.NavController
 import com.muammarahlnn.asco.core.navigation.AscoDestination
+import com.muammarahlnn.asco.feature.adminhome.AdminMenu.ATTENDANCE
 import com.muammarahlnn.asco.feature.adminhome.AdminMenu.CLASS_AND_MEETING
 import com.muammarahlnn.asco.feature.adminhome.AdminMenu.PRACTICUM
 import com.muammarahlnn.asco.feature.adminhome.AdminMenu.USER
@@ -42,6 +43,7 @@ internal class AdminHomeCoordinator(
                 USER -> AscoDestination.AdminUser
                 PRACTICUM -> AscoDestination.AdminPracticum
                 CLASS_AND_MEETING -> AscoDestination.AdminClassMeeting
+                ATTENDANCE -> AscoDestination.AdminAttendance
                 else -> throw Throwable()
             }
         )

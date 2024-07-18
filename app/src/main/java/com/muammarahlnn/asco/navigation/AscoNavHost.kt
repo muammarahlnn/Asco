@@ -13,6 +13,7 @@ import com.muammarahlnn.asco.feature.adminpracticumdetails.navigation.adminPract
 import com.muammarahlnn.asco.feature.adminuser.navigation.adminUserScreen
 import com.muammarahlnn.asco.feature.adminusercreate.navigation.adminUserCreateScreen
 import com.muammarahlnn.asco.feature.adminuserdetails.navigation.adminUserDetailsScreen
+import com.muammarahlnn.asco.feature.attendance.navigation.adminAttendanceScreen
 import com.muammarahlnn.asco.ui.AscoAppState
 import com.muammarahlnn.feature.login.navigation.loginScreen
 
@@ -65,5 +66,6 @@ internal fun AscoNavHost(
         adminPracticumDetailsScreen(navController)
         adminPracticumCreateScreen(navController)
         adminClassMeetingScreen(navController)
+        adminAttendanceScreen(navController)
     }
 }
