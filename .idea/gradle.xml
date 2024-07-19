@@ -32,6 +32,7 @@
             <option value="$PROJECT_DIR$/feature" />
             <option value="$PROJECT_DIR$/feature/adminattendance" />
             <option value="$PROJECT_DIR$/feature/adminattendance/navigation" />
+            <option value="$PROJECT_DIR$/feature/adminattendance/practicums" />
             <option value="$PROJECT_DIR$/feature/adminclassmeeting" />
             <option value="$PROJECT_DIR$/feature/adminclassmeeting/classdetails" />
             <option value="$PROJECT_DIR$/feature/adminclassmeeting/classes" />

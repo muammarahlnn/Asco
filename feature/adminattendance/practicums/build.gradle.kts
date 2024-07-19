@@ -4,11 +4,10 @@ plugins {
 }
 
 android {
-    namespace = "com.muammarahlnn.asco.feature.adminattendance"
+    namespace = "com.muammarahlnn.asco.feature.adminattendance.practicums"
 }
 
 dependencies {
     implementation(project(":feature:adminattendance:navigation"))
-    implementation(project(":feature:adminattendance:practicums"))
     implementation(libs.androidx.activity.compose)
 }

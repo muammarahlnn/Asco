@@ -1,4 +1,4 @@
-package com.muammarahlnn.asco.feature.attendance
+package com.muammarahlnn.feature.adminattendance.practicums
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
@@ -12,10 +12,10 @@ import androidx.compose.ui.Modifier
  * @File AdminAttendanceScreen, 18/07/2024 22.32
  */
 @Composable
-internal fun AdminAttendanceScreen() {
+internal fun PracticumsScreen() {
     Box(modifier = Modifier.fillMaxSize()) {
         Text(
-            text = "Admin Attendance",
+            text = "Practicums",
             modifier = Modifier.align(Alignment.Center)
         )
     }
