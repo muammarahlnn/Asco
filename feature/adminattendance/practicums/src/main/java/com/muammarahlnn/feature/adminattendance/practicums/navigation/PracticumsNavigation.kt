@@ -14,6 +14,6 @@ fun NavGraphBuilder.practicumsScreen(
     navController: NavController,
 ) {
     composable<AdminAttendanceDestination.Practicums> {
-        PracticumsRoute()
+        PracticumsRoute(navController = navController)
     }
 }

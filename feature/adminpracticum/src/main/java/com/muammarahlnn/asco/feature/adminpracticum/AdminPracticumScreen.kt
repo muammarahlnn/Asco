@@ -13,8 +13,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.muammarahlnn.asco.core.designsystem.theme.AscoTheme
 import com.muammarahlnn.asco.core.ui.component.FabAddButton
+import com.muammarahlnn.asco.core.ui.component.PracticumCard
 import com.muammarahlnn.asco.feature.adminpracticum.component.AdminPracticumTopAppBar
-import com.muammarahlnn.asco.feature.adminpracticum.component.PracticumCard
 
 /**
  * @Author Muammar Ahlan Abimanyu

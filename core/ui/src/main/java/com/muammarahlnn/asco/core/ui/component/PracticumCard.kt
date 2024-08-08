@@ -1,4 +1,4 @@
-package com.muammarahlnn.asco.feature.adminpracticum.component
+package com.muammarahlnn.asco.core.ui.component
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
@@ -26,14 +26,13 @@ import com.muammarahlnn.asco.core.designsystem.theme.AscoTheme
 import com.muammarahlnn.asco.core.designsystem.theme.DarkerPurple
 import com.muammarahlnn.asco.core.designsystem.theme.PureWhite
 import com.muammarahlnn.asco.core.designsystem.theme.Purple
-import com.muammarahlnn.asco.core.ui.component.CircleDeleteButton
 
 /**
  * @Author Muammar Ahlan Abimanyu
- * @File PracticumCard, 19/06/2024 23.07
+ * @File PracticumCard, 07/08/2024 20.37
  */
 @Composable
-internal fun PracticumCard(
+fun PracticumCard(
     practicumName: String,
     numberOfClasses: Int,
     onClick: () -> Unit,
@@ -58,9 +57,9 @@ internal fun PracticumCard(
                 contentDescription = null,
                 modifier = Modifier.size(32.dp)
             )
-            
+
             Spacer(modifier = Modifier.width(16.dp))
-            
+
             Column {
                 Text(
                     text = practicumName,
