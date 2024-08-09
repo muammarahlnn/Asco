@@ -10,4 +10,7 @@ sealed interface AdminAttendanceDestination {
 
     @Serializable
     data object Practicums : AdminAttendanceDestination
+
+    @Serializable
+    data object Meetings : AdminAttendanceDestination
 }

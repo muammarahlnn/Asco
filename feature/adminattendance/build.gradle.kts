@@ -10,5 +10,6 @@ android {
 dependencies {
     implementation(project(":feature:adminattendance:navigation"))
     implementation(project(":feature:adminattendance:practicums"))
+    implementation(project(":feature:adminattendance:meetings"))
     implementation(libs.androidx.activity.compose)
 }

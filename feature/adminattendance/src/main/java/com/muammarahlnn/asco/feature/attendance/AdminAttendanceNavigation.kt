@@ -4,6 +4,7 @@ import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.navigation
 import com.muammarahlnn.asco.core.navigation.AscoDestination
+import com.muammarahlnn.asco.feature.adminattendance.meetings.navigation.meetingsScreen
 import com.muammarahlnn.feature.adminattendance.navigation.AdminAttendanceDestination
 import com.muammarahlnn.feature.adminattendance.practicums.navigation.practicumsScreen
 
@@ -18,5 +19,6 @@ fun NavGraphBuilder.adminAttendanceScreen(
         startDestination = AdminAttendanceDestination.Practicums
     ) {
         practicumsScreen(navController)
+        meetingsScreen(navController)
     }
 }

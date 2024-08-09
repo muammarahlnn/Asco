@@ -5,6 +5,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavController
+import com.muammarahlnn.feature.adminattendance.navigation.AdminAttendanceDestination
 import kotlinx.coroutines.CoroutineScope
 
 /**
@@ -37,5 +38,7 @@ internal class PracticumsCoordinator(
         navController.navigateUp()
     }
 
-    fun navigateToMeetings() {}
+    fun navigateToMeetings() {
+        navController.navigate(AdminAttendanceDestination.Meetings)
+    }
 }
