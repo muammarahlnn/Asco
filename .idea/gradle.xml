@@ -31,6 +31,7 @@
             <option value="$PROJECT_DIR$/core/ui" />
             <option value="$PROJECT_DIR$/feature" />
             <option value="$PROJECT_DIR$/feature/adminattendance" />
+            <option value="$PROJECT_DIR$/feature/adminattendance/meetings" />
             <option value="$PROJECT_DIR$/feature/adminattendance/navigation" />
             <option value="$PROJECT_DIR$/feature/adminattendance/practicums" />
             <option value="$PROJECT_DIR$/feature/adminclassmeeting" />
